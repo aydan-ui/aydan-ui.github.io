@@ -49,19 +49,18 @@
     <p style="margin-top: 0px; color: darkblue">
         <!-- we're setting the margin to 0px so the header and authour name are close together -->
         Aydan Abbasguliyeva | <a href="https://www.linkedin.com/in/aydanabas/">LinkedIn</a> | <a
-            href="https://www.github.com/YOUR_GITHUB">GitHub</a>
+            href="https://github.com/aydan-ui">GitHub</a>
     </p>
     <h3 class="small"> <!-- We have added a class to the header called "small" which we can use to style it in the CSS -->
-        This page acts as your portfolio of charts. You can use it as a good starting point to display your work but make sure to customise it to make it your own, or even start from scratch.  
+        Hello! I'm Aydan, and this page showcases my journey through the fascinating world of data visualization. I’m learning to transform raw data into meaningful insights using visual tools. Here, you'll find a variety of data-driven projects, showcasing my skills in data cleaning, analysis, and creating compelling visualizations. Feel free to explore and interact with the visualizations. I'm excited to share my progress with you! 
     </h3>
 
     <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
     <section>
         <div class="chart-description">
-            <h2>Section 1: A basic chart</h2>
+            <h2>Section 1: The Relationship Between GDP and Life Expectancy by Region </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using a basic chart from our repo.
+                This scatter plot visualizes the relationship between GDP per capita (on a log scale) and life expectancy across various regions of the world. Each dot represents a country, with the size of the dots corresponding to the population size. The countries are grouped by continent, as indicated by different colors: Africa (blue), America (orange), Asia (red), Europe (green), and Oceania (light blue). The plot suggests that higher GDP per capita is generally associated with longer life expectancy, with regional variations evident. Data sources include the UN Population Prospects 2022 for life expectancy and the World Bank for GDP.
             </p>
         </div>
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
@@ -69,15 +68,34 @@
 
     <section>
         <div class="chart-description">
-            <h2>Section 2: An imported chart</h2>
+            <h2>Section 2: Declining Populations </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                We've organised the page into sections, with each section containing a chart, title and a description. Here, we can describe the chart and give some context.
-                As a first example, we're using a basic chart from our repo.
+                This line graph illustrates the projected cumulative percentage change in population for several countries from 2020 to 2100. Countries like South Korea and Japan are expected to see significant population declines, while the UK and the US are projected to experience moderate population growth. Data source: UN.
             </p>
         </div>
         <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
+    <section>
+        <div class="chart-description">
+            <h2>Section 3: Grain Imports | Ukraine </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This line graph shows the sharp rise in grain imports to Ukraine from 2010 to 2023, with a particularly notable increase after 2020. The data highlights significant growth in recent years. The source for the data is UN COMTRADE through the ECO API.
+            </p>
+        </div>
+        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 4: Vice Spending </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This line chart tracks the spending trends on various "vice" products in the UK from 1998 to 2022, including alcohol (beer, spirits, wines, ciders), tobacco, and narcotics. The spending on tobacco shows a sharp increase, while other categories like narcotics and beer remain relatively steady. Data source: ONS (Office for National Statistics).
+            </p>
+        </div>
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+    
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -89,7 +107,9 @@
         // This is a comment in JavaScript - it's a different language to HTML and CSS
 
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_2_spec = "week1_declining populations.json"                                                                                                         // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
+        let figure_2_spec = "week1_declining populations.json"   
+        let figure_3_spec = "uk_grain_imp.json"
+        let figure_4_spec = "Vice Spending.json"                                                                                                    // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
         vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
@@ -100,7 +120,8 @@
         // vegaEmbed('#Location3', figure_3_spec)
 
         vegaEmbed ("#Location2", figure_2_spec)
-          
+        vegaEmbed ("#Location3", figure_3_spec)
+        vegaEmbed ("#Location4", figure_4_spec)
     </script>
 
 </body>
