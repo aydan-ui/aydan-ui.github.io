@@ -78,12 +78,32 @@
 
     <section>
         <div class="chart-description">
+            <h2>Section 1: Gender Parity Deviation Across Asia-Pacific Countries (3) </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This horizontal bar chart displays the deviation from gender parity across various countries in the Asia-Pacific region. The bars extending to the left represent countries where gender parity has not been achieved, with Pakistan showing the highest deviation. The bars extending to the right indicate countries with a slight positive deviation, where more progress has been made toward gender parity. Countries like the Philippines and Solomon Islands exhibit a positive deviation toward gender balance, while countries like Tajikistan and Maldives show significant gender inequality. The chart emphasizes the varying degrees of gender parity across the region.
+            </p>
+        </div>
+        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 1:  Food-Related CO2 Greenhouse Gas Emissions (4) </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This stacked horizontal bar chart illustrates the amount of CO2 emissions (in kg) produced per kilogram of various types of food. The emissions are broken down by different stages of production and distribution: land use, farm activities, animal feed, processing, transport, retail, and packaging. The chart shows that beef (from both beef and dairy herds) and lamb & mutton generate the highest CO2 emissions, largely driven by land use and farm activities. On the other end, foods like peas, bananas, and maize have significantly lower emissions. The data source is "Our World in Data."
+            </p>
+        </div>
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+    <section>
+        <div class="chart-description">
             <h2>Section 2: Grain Imports | Ukraine (1) </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 This line graph shows the sharp rise in grain imports to Ukraine from 2010 to 2023, with a particularly notable increase after 2020. The data highlights significant growth in recent years. The source for the data is UN COMTRADE through the ECO API.
             </p>
         </div>
-        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
 
     <section>
@@ -93,7 +113,16 @@
                 This line chart tracks the spending trends on various "vice" products in the UK from 1998 to 2022, including alcohol (beer, spirits, wines, ciders), tobacco, and narcotics. The spending on tobacco shows a sharp increase, while other categories like narcotics and beer remain relatively steady. Data source: ONS (Office for National Statistics).
             </p>
         </div>
-        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 4: Renewables - electricity generation (1) </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This bar chart displays the global annual electricity generation from renewable sources, measured in billion kilowatt-hours, from 1980 to 2020. The data shows a steady increase in renewable electricity generation over time, with a significant acceleration in growth starting around 2005. By 2020, renewable generation reached close to 9,000 billion kilowatt-hours, reflecting a major global shift towards renewable energy sources. The source of this data is the U.S. Energy Information Administration (US EIA).
+        </div>
+        <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
     
     <!-- Do you want to add more sections? -->
@@ -108,8 +137,11 @@
 
         let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
         let figure_2_spec = "week1_declining populations.json"   
-        let figure_3_spec = "uk_grain_imp.json"
-        let figure_4_spec = "Vice Spending.json"                                                                                                    // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
+        let figure_3_spec = "gender_par.json"
+        let figure_4_spec = "co2.json"
+        let figure_5_spec = "uk_grain_imp.json"
+        let figure_6_spec = "Vice Spending.json"
+        let figure_7_spec = "wk4_renewables.json"                                                                                                   // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
         vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
@@ -122,6 +154,9 @@
         vegaEmbed ("#Location2", figure_2_spec)
         vegaEmbed ("#Location3", figure_3_spec)
         vegaEmbed ("#Location4", figure_4_spec)
+        vegaEmbed ("#Location5", figure_5_spec)
+        vegaEmbed ("#Location6", figure_6_spec)
+        vegaEmbed ("#Location7", figure_7_spec)
     </script>
 
 </body>
