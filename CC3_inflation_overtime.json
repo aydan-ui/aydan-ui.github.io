@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Inflation Rates Over Time",
+      "anchor": "start",
+      "color": "black"
+    },
+    "width": 400,
+    "height": 300,
+    "data": {
+      "values": [
+        {"year": 2018, "inflation_rate": 2.1},
+        {"year": 2019, "inflation_rate": 1.8},
+        {"year": 2020, "inflation_rate": 1.5},
+        {"year": 2021, "inflation_rate": 3.0},
+        {"year": 2022, "inflation_rate": 6.5},
+        {"year": 2023, "inflation_rate": 5.2}
+      ]
+    },
+    "mark": {
+      "type": "line",
+      "color": "red",
+      "point": true
+    },
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      "y": {
+        "field": "inflation_rate",
+        "type": "quantitative",
+        "title": "Inflation Rate (%)"
+      }
+    }
+  }
+  
