@@ -18,11 +18,12 @@ body { /* We can style any HTML element by using its name - here we're styling t
 }
 
 .profile-pic {
-    width: 150px; /* Adjust the width */
-    height: 150px; /* Adjust the height */
-    border-radius: 50%; /* Makes the image circular */
-    transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+    width: 30%; /* Adjust percentage as needed */
+    max-width: 150px; /* Prevents the image from getting too large on larger screens */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 50%;
+}
+
 }
 
 /* Headings */
