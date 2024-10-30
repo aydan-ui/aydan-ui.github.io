@@ -88,13 +88,15 @@ figure {
 /* About Section Styling */
 #about {
     padding: 20px;
-    background-color: #a4ac86; /* Soft Olive background for the about section */
-    color: #dad7cd; /* light text color */
-    transition: background-color 0.3s ease;
+    background-color: #c2c5aa; /* Light Sage background for the about section */
+    color: #b6ad90; /* Soft Grayish Brown for main text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect for the About Section */
 #about:hover {
-    background-color: #e0f7fa; /* Light teal as a subtle hover effect for about section */
+    background-color: #a68a64; /* Muted Brown on hover */
+    color: #333d29; /* Dark Olive text color on hover for strong contrast */
 }
 
 /* Button Styling */
