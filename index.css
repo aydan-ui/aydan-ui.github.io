@@ -1,9 +1,10 @@
+/* Main Body Styling */
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  color: #333;
+  color: #414833; /* Dark Moss for primary text */
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f9f9f9; /* Light background */
   margin: 0 auto;
   max-width: 800px;
   padding-top: 60px;
@@ -20,13 +21,13 @@ body {
 
 /* Hover effect for the profile picture */
 .profile-pic:hover {
-    transform: scale(1.1); /* Slightly enlarges the image */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #333;
+  color: #656d4a; /* Medium Olive for headings */
   margin-top: 24px;
   margin-bottom: 16px;
   font-weight: 600;
@@ -34,43 +35,51 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   font-size: 1.75em;
-  transition: color 0.3s ease; /* Smooth color transition for hover */
+  transition: color 0.3s ease;
 }
 
 h2:hover {
-    color: #007acc; /* Changes to a new color on hover */
+    color: #7f4f24; /* Burnt Orange for heading hover effect */
 }
 
-.big { font-size: 2.5em; }
-.small { font-size: 1.25em; }
+.big {
+  font-size: 2.5em;
+}
 
-/* Paragraph styling */
+.small {
+  font-size: 1.25em;
+}
+
+/* Paragraph Styling */
 p {
+  color: #414833; /* Dark Moss for paragraph text */
   margin-bottom: 1em;
   font-weight: 300;
 }
 
-/* Section spacing */
+/* Section Spacing */
 section {
   margin-bottom: 2.5em;
 }
 
-/* Link styling */
+/* Link Styling */
 a {
-  color: #065f46;
+  color: #936639; /* Earthy Brown for links */
   text-decoration: none;
 }
+
 a:hover {
+  color: #7f4f24; /* Burnt Orange for hover effect */
   text-decoration: underline;
 }
 
-/* General image settings to keep images responsive */
+/* General Image Settings to Keep Images Responsive */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Figure styling */
+/* Figure Styling */
 figure {
   width: 100%;
   max-width: 500px;
@@ -79,10 +88,44 @@ figure {
 /* About Section Styling */
 #about {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #a4ac86; /* Soft Olive background for the about section */
+    color: #333d29; /* Dark Olive text color */
     transition: background-color 0.3s ease;
 }
 
 #about:hover {
-    background-color: #e0f7fa;
+    background-color: #e0f7fa; /* Light teal as a subtle hover effect for about section */
+}
+
+/* Button Styling */
+button, .btn {
+    background-color: #936639; /* Earthy Brown for button */
+    color: #ffffff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #7f4f24; /* Burnt Orange for button hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #582f0e; /* Dark Brown for footer background */
+    color: #a4ac86; /* Soft Olive text in footer */
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #a4ac86; /* Soft Olive for footer links */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #7f4f24; /* Burnt Orange for hover effect on footer links */
 }
