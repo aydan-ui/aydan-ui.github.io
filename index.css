@@ -17,6 +17,13 @@ body { /* We can style any HTML element by using its name - here we're styling t
   padding-top: 60px;
 }
 
+.profile-pic {
+    width: 150px; /* Adjust the width */
+    height: 150px; /* Adjust the height */
+    border-radius: 50%; /* Makes the image circular */
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow effect */
+}
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
