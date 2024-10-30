@@ -12,14 +12,19 @@ body {
 /* Profile Picture Styling */
 .profile-pic {
     width: 150px;
-    max-width: 100%;   /* Ensures the image doesn't get larger than its container */
     height: auto;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Other styling */
+/* Hover effect for the profile picture */
+.profile-pic:hover {
+    transform: scale(1.1); /* Slightly enlarges the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
+}
+
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   color: #333;
   margin-top: 24px;
@@ -27,46 +32,57 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+h2 {
+  font-size: 1.75em;
+  transition: color 0.3s ease; /* Smooth color transition for hover */
+}
+
+h2:hover {
+    color: #007acc; /* Changes to a new color on hover */
+}
+
 .big { font-size: 2.5em; }
-h2 { font-size: 1.75em; }
 .small { font-size: 1.25em; }
 
-p { margin-bottom: 1em; font-weight: 300; }
+/* Paragraph styling */
+p {
+  margin-bottom: 1em;
+  font-weight: 300;
+}
 
-section { margin-bottom: 2.5em; }
+/* Section spacing */
+section {
+  margin-bottom: 2.5em;
+}
 
-a { color: #065f46; text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* Link styling */
+a {
+  color: #065f46;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
-/* General image settings */
+/* General image settings to keep images responsive */
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Figure styling */
 figure {
   width: 100%;
   max-width: 500px;
 }
-#about h2 {
-    color: #333;
-    transition: color 0.3s ease;
+
+/* About Section Styling */
+#about {
+    padding: 20px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
 }
 
-#about h2:hover {
-    color: #007acc; /* Changes to a new color on hover */
+#about:hover {
+    background-color: #e0f7fa;
 }
-
-.profile-pic {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.profile-pic:hover {
-    transform: scale(1.1); /* Slightly enlarges the image */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increases shadow on hover */
-}
-
