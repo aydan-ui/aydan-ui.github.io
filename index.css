@@ -16,6 +16,8 @@ body { /* We can style any HTML element by using its name - here we're styling t
   max-width: 800px;
   padding-top: 60px;
 }
+<img src="profile.jpg" alt="Profile picture of Aydan" style="width:150px; height:150px; border-radius:50%;">
+
 }
 .profile-pic {
     width: 150px !important;
