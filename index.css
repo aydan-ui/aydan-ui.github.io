@@ -17,14 +17,6 @@ body { /* We can style any HTML element by using its name - here we're styling t
   padding-top: 60px;
 }
 
-.profile-pic {
-    width: 150px !important;
-    height: 150px !important;
-    border-radius: 50% !important;
-    transition: transform 0.3s ease !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
 }
 
 /* Headings */
