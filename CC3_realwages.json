@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Real Wages Over Time",
+      "anchor": "start",
+      "color": "black"
+    },
+    "width": 400,
+    "height": 300,
+    "data": {
+      "values": [
+        {"year": 2018, "real_wage": 35},
+        {"year": 2019, "real_wage": 36},
+        {"year": 2020, "real_wage": 35},
+        {"year": 2021, "real_wage": 34},
+        {"year": 2022, "real_wage": 33},
+        {"year": 2023, "real_wage": 32}
+      ]
+    },
+    "mark": {
+      "type": "line",
+      "color": "blue",
+      "point": true
+    },
+    "encoding": {
+      "x": {
+        "field": "year",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      "y": {
+        "field": "real_wage",
+        "type": "quantitative",
+        "title": "Average Real Wage (£)"
+      }
+    }
+  }
+  
