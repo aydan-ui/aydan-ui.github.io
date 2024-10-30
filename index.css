@@ -89,7 +89,7 @@ figure {
 #about {
     padding: 20px;
     background-color: #a4ac86; /* Soft Olive background for the about section */
-    color: #333d29; /* Dark Olive text color */
+    color: #dad7cd; /* light text color */
     transition: background-color 0.3s ease;
 }
 
