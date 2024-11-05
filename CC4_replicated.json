@@ -1,0 +1,118 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 300,
+    "title": {
+      "text": "Big emission cuts still needed to limit warming to 1.5C",
+      "subtitle": "Projected greenhouse gas emissions in 2030, gigatonnes",
+      "subtitleFontStyle": "italic",
+      "subtitleColor": "#CA7C05",
+      "fontSize": 20,
+      "anchor": "start",
+      "offset": 25,
+      "subtitlePadding": 12
+    },
+    "data": {
+      "values": [
+        {"category": "Pledges before COP26", "value": 52.4, "color": "#bb3e03"},
+        {"category": "Pledges at COP26", "value": 41.9, "color": "#ca6702"},
+        {"category": "Target level for 2030", "value": 26.6, "color": "#e2a527"}
+      ]
+    },
+    "layer": [
+      {
+        "mark": {"type": "bar", "width": 60},
+        "encoding": {
+          "x": {
+            "field": "category",
+            "type": "nominal",
+            "sort": ["Pledges before COP26", "Pledges at COP26", "Target level for 2030"],
+            "axis": {
+              "title": "Scenarios",
+              "titleFontSize": 14,
+              "labelAngle": 0,
+              "labelPadding": 10,
+              "labels": false
+            }
+          },
+          "y": {
+            "field": "value",
+            "type": "quantitative",
+            "axis": {
+              "title": "Emissions (Gt)",
+              "titleFontSize": 14,
+              "grid": false
+            }
+          },
+          "color": {"field": "color", "type": "nominal", "scale": null}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "dy": -30,
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "color": "black"
+        },
+        "encoding": {
+          "x": {"field": "category", "type": "nominal", "sort": ["Pledges before COP26", "Pledges at COP26", "Target level for 2030"]},
+          "y": {"field": "value", "type": "quantitative", "aggregate": "max"},
+          "text": {"field": "category", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "dy": 13,
+          "fontSize": 16,
+          "fontWeight": "bold",
+          "color": "white"
+        },
+        "encoding": {
+          "x": {"field": "category", "type": "nominal", "sort": ["Pledges before COP26", "Pledges at COP26", "Target level for 2030"]},
+          "y": {"field": "value", "type": "quantitative"},
+          "text": {"field": "value", "type": "quantitative", "format": ".1f"}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "dy": 30,
+          "fontSize": 12,
+          "fontWeight": "normal",
+          "color": "white"
+        },
+        "encoding": {
+          "x": {"field": "category", "type": "nominal", "sort": ["Pledges before COP26", "Pledges at COP26", "Target level for 2030"]},
+          "y": {"field": "value", "type": "quantitative"},
+          "text": {"value": "Gt"}
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "center",
+          "baseline": "bottom",
+          "dx": 0,
+          "dy": 60,  
+          "fontSize": 11.5,
+          "fontStyle": "italic",
+          "color": "black"
+        },
+        "encoding": {
+          "x": {"datum": "Pledges before COP26"}, 
+          "y": {"datum": 0}, 
+          "text": {"value": "Note: We’re a long way from where we need to be in 2030"}
+        }
+      }
+    ],
+    "config": {
+      "axis": {"labelFontSize": 12},
+      "view": {"stroke": null}
+    }
+  }
+  
