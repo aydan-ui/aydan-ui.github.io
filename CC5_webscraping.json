@@ -1,292 +1,48 @@
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
-<!-- This is a comment -->
-<!-- Comments are not displayed in the browser -->
-<!-- They can be used to leave notes in the code -->
-
-<!DOCTYPE html>
-<html> 
-    <!-- HTML is heirarchial: tags like this define elements on the page. 
-    Each tag does something different. For example:
-        - The <html> tag defines the whole document.
-        - The <h1> tag defines a large heading
-        - The <p> tag defines a paragraph
-        - Tags appear as an opening <div> and closing </div> pair
-    -->
-
-<head>    
-    <!-- The head tag links to resources our page needs and defines information about it. Tags in the <head> aren't displayed on the page. -->
-
-    <!-- This is a link to a stylesheet which contains rules about how each element on the page should be defined-->
-    <!-- Try swapping example1.css to another, and take a look at example1.css to see if you understand it-->
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <title>My Portfolio</title> <!-- The title displayed in the browser tab, not on the page itself -->
-
-    <!-- This is a link to the vega-lite which we're using to make graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-    <style>
-        #chartGrid {
-            display: flex;
-        }
-        
-    </style>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMKLFCeEL9bU4mQIB7rGmIcMAhZcXOYroF86C/kRtKLLY" crossorigin="anonymous">
-
-</head>
-
-<body> 
-<!-- The body tag contains the elements that visitors to our page will see. -->
-    <h1 class="big" style="margin-bottom: 0px;"> <!-- We have added a class to the header called "big" which we can use to style it in the CSS -->
-        <!-- This is a header, it is the largest text on the page -->
-        Aydan Abbasguliyeva
-    </h1>
-    <p style="margin-top: 0px; color: darkblue">
-        <!-- we're setting the margin to 0px so the header and authour name are close together -->
-        Aydan Abbasguliyeva | <a href="https://www.linkedin.com/in/aydanabas/">LinkedIn</a> | <a
-            href="https://github.com/aydan-ui">GitHub</a> |
-        <a  href="http://aydan-ui.github.io/project">Project</a>
-    </p>
-    
-    <section id="about" style="text-align: center; margin: 50px 0;">
-        <h2>About Me</h2>
-        <p>Hello! I'm Aydan, and this page showcases my journey through the fascinating world of data visualization. I’m learning to transform raw data into meaningful insights using visual tools. Here, you'll find a variety of data-driven projects, showcasing my skills in data cleaning, analysis, and creating compelling visualizations. Feel free to explore and interact with the visualizations. I'm excited to share my progress with you! 
-        </h3>.</p>
-
-        <img src="33-Aydan Abbasguliyeva_LSE 21092327846[55].heic" alt="Profile picture of Aydan" class="profile-pic">
-
-    </section>
-
-    <!-- We're organising the page into sections, with each section containing a chart, title and a description -->
-</head>
-<body>
-    <h2>Section 1: Hosting. Displaying charts in my own website.</h2>
-
-    <section>
-        <div class="chart-description">
-            <h2>Chart 1 | The Relationship Between GDP and Life Expectancy by Region </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This scatter plot visualizes the relationship between GDP per capita (on a log scale) and life expectancy across various regions of the world. Each dot represents a country, with the size of the dots corresponding to the population size. The countries are grouped by continent, as indicated by different colors: Africa (blue), America (orange), Asia (red), Europe (green), and Oceania (light blue). The plot suggests that higher GDP per capita is generally associated with longer life expectancy, with regional variations evident. Data sources include the UN Population Prospects 2022 for life expectancy and the World Bank for GDP.
-            </p>
-        </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Chart 2 | Declining Populations </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line graph illustrates the projected cumulative percentage change in population for several countries from 2020 to 2100. Countries like South Korea and Japan are expected to see significant population declines, while the UK and the US are projected to experience moderate population growth. Data source: UN.
-            </p>
-        </div>
-        <figure id="Location2"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Chart 3 | Gender Parity Deviation Across Asia-Pacific Countries </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This horizontal bar chart displays the deviation from gender parity across various countries in the Asia-Pacific region. The bars extending to the left represent countries where gender parity has not been achieved, with Pakistan showing the highest deviation. The bars extending to the right indicate countries with a slight positive deviation, where more progress has been made toward gender parity. Countries like the Philippines and Solomon Islands exhibit a positive deviation toward gender balance, while countries like Tajikistan and Maldives show significant gender inequality. The chart emphasizes the varying degrees of gender parity across the region.
-            </p>
-        </div>
-        <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Chart 4 | Food-Related CO2 Greenhouse Gas Emissions </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This stacked horizontal bar chart illustrates the amount of CO2 emissions (in kg) produced per kilogram of various types of food. The emissions are broken down by different stages of production and distribution: land use, farm activities, animal feed, processing, transport, retail, and packaging. The chart shows that beef (from both beef and dairy herds) and lamb & mutton generate the highest CO2 emissions, largely driven by land use and farm activities. On the other end, foods like peas, bananas, and maize have significantly lower emissions. The data source is "Our World in Data."
-            </p>
-        </div>
-        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-
-</head>
-<body>
-    <h2>Section 2: Building. Creating my own visualisations</h2>
-    
-    <section>
-        <div class="chart-description">
-            <h2>Chart 1 | Grain Imports. Ukraine </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line graph shows the sharp rise in grain imports to Ukraine from 2010 to 2023, with a particularly notable increase after 2020. The data highlights significant growth in recent years. The source for the data is UN COMTRADE through the ECO API.
-            </p>
-        </div>
-        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2>Chart 2 | Vice Spending </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line chart tracks the spending trends on various "vice" products in the UK from 1998 to 2022, including alcohol (beer, spirits, wines, ciders), tobacco, and narcotics. The spending on tobacco shows a sharp increase, while other categories like narcotics and beer remain relatively steady. Data source: ONS (Office for National Statistics).
-            </p>
-        </div>
-        <figure id="Location6"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-</head>
-<body>
-    <h2>Section 3: Debating. Impact of Inflation on Living Standards</h2>
-    <p>At the Festival of Economics 2024, experts discussed how inflation affects household purchasing power and overall living standards.</p>
-
-    <section>
-        <div class="chart-description">
-            <h2>Chart 1 | Inflation Rate Over Time </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line chart shows the annual inflation rate from 2018 to 2023. The trend indicates a steady increase in inflation over recent years, with a notable spike in 2022. Rising inflation rates imply higher costs for goods and services, which can impact consumers’ purchasing power.
-        </div>
-        <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-    <section>
-        <div class="chart-description">
-            <h2> Chart 2 | Real Wages Over time </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This line chart illustrates the average real wage from 2018 to 2023. The data shows a gradual decline in real wages, particularly from 2020 onwards, suggesting that wage growth has not kept pace with inflation. This decline can result in reduced purchasing power for households.
-        </div>
-        <figure id="Location8"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-    
-    <section>
-        <div class="chart-description">
-            <h2>Chart 3: Renewables - electricity generation </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This bar chart displays the global annual electricity generation from renewable sources, measured in billion kilowatt-hours, from 1980 to 2020. The data shows a steady increase in renewable electricity generation over time, with a significant acceleration in growth starting around 2005. By 2020, renewable generation reached close to 9,000 billion kilowatt-hours, reflecting a major global shift towards renewable energy sources. The source of this data is the U.S. Energy Information Administration (US EIA).
-        </div>
-        <figure id="Location9"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-</head>
-<body>
-    <h2>Section 4: Replication. Re-creating, then improving, someone else’s chart.</h2>
-    <p>This chart from BBC report is particularly interesting, because it clearly shows the gap between current emissions pledges and the target needed to limit warming to 1.5°C. The layout, bold numbers, and arrows make it easy to understand the urgency of further emissions cuts.</p>
-    <a href="https://www.bbc.co.uk/news/resources/idt-d6338d9f-8789-4bc2-b6d7-3691c0e7d138" target="_blank">
-    <img src="Screenshot 2024-11-05 at 21.30.52.png" alt="Chart showing emissions pledges" width="500">
-    </a>
-</body>
-
-    <section>
-        <div class="chart-description">
-            <h2>Replicated Chart: Big Emission Cuts </h2>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                I updated bar colors for clarity, added axis titles for context, adjusted text sizes, and included a footnote to emphasize the 2030 emissions gap</p>
-        </div>
-        <figure id="Location10"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
-
-</head>
-<body>
-    <h2>Section 5: Scraper. Implement a data scraper of your own.</h2>
-    <p>I chose the Happiness Report because it highlights global well-being, offering insights into life satisfaction and policies fostering happiness, aligning with my interest in impactful, evidence-based governance.</p>
-</body>
-
-<section>
-    <div class="chart-description">
-        <h2> Chart | World Happiness Report 2024: Top 10 Life Evaluation Scores </h2>
-        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-            This bar chart visualizes the top 10 happiest countries from the 2024 World Happiness Report, ranked by their Life Evaluation Scores. It highlights global well-being trends.
-    </div>
-    <figure id="Location11"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-</section>
-
-<section id="colab-notebook" style="text-align: center; margin: 50px 0;">
-    <h2>Explore My Google Colab Notebook</h2>
-    <p>
-        Click the button below to view the Google Colab notebook, where I demonstrate my data visualization workflow and Python code.
-    </p>
-    <a href="https://colab.research.google.com/drive/1nTiP1fwqMZVhWlL0vx4_aUPxCNky8G-A?usp=sharing" target="_blank">
-        <button style="
-            background-color: #007bff;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        ">
-            Open Colab Notebook
-        </button>
-    </a>
-</section>
-
-
-</head>
-<body>
-    <h2>Section 6: Loops. Build a dashboard.</h2>
-    <p>Lorem Ipsum</p>
-</body>
-
-</head>
-<body>
-    <h2>Section 7: Maps. Base maps and choropleths</h2>
-    <p>Lorem Ipsum</p>
-</body>
-
-<section>
-    <div class="chart-description">
-        <p>Chart 2: This choropleth map shows global GDP per capita (PPP, 2021 USD) from the World Bank. Darker blues represent higher values. Created in class to explore visualization. </p>
-    </div>
-    <figure id="Location14"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-</section>
-
-    <!-- Do you want to add more sections? -->
-        <!-- Try copying pasting the section above -->
-        <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
-        <!-- ... and add a new variable for the graph spec in the script at the bottom of the page -->
-
-
-    <!-- This is a script, it's a way to run JavaScript code on the page -->
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
-
-        let figure_1_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json"; // We're storing the URL of the graph we want to display in a variable
-        let figure_2_spec = "week1_declining populations.json"   
-        let figure_3_spec = "gender_par.json"
-        let figure_4_spec = "co2.json"
-        let figure_5_spec = "uk_grain_imp.json"
-        let figure_6_spec = "Vice Spending.json"
-        let figure_7_spec = "CC3_inflation_overtime.json"
-        let figure_8_spec = "CC3_realwages.json"
-        let figure_9_spec = "wk4_renewables.json"
-        let figure_10_spec = "CC4_replicated.json"
-        let figure_11_spec = "CC5_webscraping.json"
-        let figure_14_spec = "wk7_map.json"                                                                                                // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
-
-        vegaEmbed ("#Location2", figure_2_spec)
-        vegaEmbed ("#Location3", figure_3_spec)
-        vegaEmbed ("#Location4", figure_4_spec)
-        vegaEmbed ("#Location5", figure_5_spec)
-        vegaEmbed ("#Location6", figure_6_spec)
-        vegaEmbed ("#Location7", figure_7_spec)
-        vegaEmbed ("#Location8", figure_8_spec)
-        vegaEmbed ("#Location9", figure_9_spec)
-        vegaEmbed ("#Location10", figure_10_spec)
-        vegaEmbed ("#Location11", figure_11_spec)
-        vegaEmbed ("#Location14", figure_14_spec)
-    </script>
-
-</body>
-    
-</html>
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/world_happiness_report_top10_tidy.csv",
+      "format": {"type": "csv"}
+    },
+    "width": 400,
+    "height": 500,
+    "mark": {
+      "type": "bar",
+      "tooltip": true
+    },
+    "encoding": {
+      "y": {
+        "field": "Country or Region",
+        "title": null,
+        "sort": "-x",
+        "type": "nominal",
+        "axis": {"labelAngle": 0}
+      },
+      "x": {
+        "field": "Value",
+        "type": "quantitative",
+        "axis": {"title": "Life Evaluation Score", "grid": true}
+      },
+      "color": {
+        "condition": {
+          "test": "datum['Country or Region'] === 'Norway'",
+          "value": "#1f77b4"
+        },
+        "value": "#6baed6"
+      }
+    },
+    "title": {
+      "text": "The Happiest Countries in the World",
+      "subtitle": "World Happiness Report 2024: Top 10 Life Evaluation Scores",
+      "fontSize": 18,
+      "subtitleFontSize": 14,
+      "anchor": "start"
+    },
+    "config": {
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 14
+      },
+      "bar": {"size": 30}
+    }
+  }
