@@ -286,17 +286,18 @@
             .catch(error => console.error('Error loading GeoJSON:', error));
     </script>
 </section>
-        <section>
+
+<section>
     <h2>Choropleth Map | London Boroughs Population</h2>
     <p>This choropleth map shows the population of London boroughs in 2023. Darker shades represent higher populations.</p>
     <!-- Map container -->
     <div id="choropleth-map" style="height: 600px; width: 100%;"></div>
 
-    <!-- Load Leaflet JS and CSS -->
+    <!-- Include Leaflet JS and CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- Load the map and GeoJSON -->
+    <!-- Load the GeoJSON and add choropleth map -->
     <script>
         // Initialize the choropleth map
         var choroplethMap = L.map('choropleth-map').setView([51.5074, -0.1278], 10); // Centered on London
@@ -306,83 +307,102 @@
             attribution: '© OpenStreetMap'
         }).addTo(choroplethMap);
 
-        // Load GeoJSON data and population values
+        // Population data for boroughs
+        var populationData = {
+            "Barking and Dagenham": 220000,
+            "Barnet": 395007,
+            "Bexley": 250000,
+            "Brent": 344521,
+            "Bromley": 310000,
+            "Camden": 250000,
+            "City of London": 8000,
+            "Croydon": 397741,
+            "Ealing": 375340,
+            "Enfield": 333000,
+            "Greenwich": 280000,
+            "Hackney": 300000,
+            "Hammersmith and Fulham": 200000,
+            "Haringey": 270000,
+            "Harrow": 250000,
+            "Havering": 240000,
+            "Hillingdon": 320000,
+            "Hounslow": 280000,
+            "Islington": 180000,
+            "Kensington and Chelsea": 150000,
+            "Kingston upon Thames": 175000,
+            "Lambeth": 300000,
+            "Lewisham": 290000,
+            "Merton": 220000,
+            "Newham": 362552,
+            "Redbridge": 300000,
+            "Richmond upon Thames": 195000,
+            "Southwark": 310000,
+            "Sutton": 200000,
+            "Tower Hamlets": 340000,
+            "Waltham Forest": 275000,
+            "Wandsworth": 320000,
+            "Westminster": 250000
+        };
+
+        // Function to set color based on population range
+        function getColor(value) {
+            return value > 400000 ? '#084594' :
+                   value > 350000 ? '#2171b5' :
+                   value > 300000 ? '#6baed6' :
+                   value > 250000 ? '#bdd7e7' :
+                                    '#eff3ff';
+        }
+
+        // Style function for the GeoJSON layer
+        function style(feature) {
+            var boroughName = feature.properties.name;
+            var value = populationData[boroughName] || 0; // Default to 0 if no data
+            return {
+                fillColor: getColor(value),
+                weight: 1,
+                color: '#000',
+                fillOpacity: 0.7
+            };
+        }
+
+        // Add the GeoJSON layer and style it
         fetch('london-boroughs_1179.geojson')
             .then(response => response.json())
             .then(geojsonData => {
-                // Example population data (replace with real data if needed)
-                var populationData = {
-                    var populationData = {
-    "Barking and Dagenham": 220000,
-    "Barnet": 395007,
-    "Bexley": 250000,
-    "Brent": 344521,
-    "Bromley": 310000,
-    "Camden": 250000,
-    "City of London": 8000,
-    "Croydon": 397741,
-    "Ealing": 375340,
-    "Enfield": 333000,
-    "Greenwich": 280000,
-    "Hackney": 300000,
-    "Hammersmith and Fulham": 200000,
-    "Haringey": 270000,
-    "Harrow": 250000,
-    "Havering": 240000,
-    "Hillingdon": 320000,
-    "Hounslow": 280000,
-    "Islington": 180000,
-    "Kensington and Chelsea": 150000,
-    "Kingston upon Thames": 175000,
-    "Lambeth": 300000,
-    "Lewisham": 290000,
-    "Merton": 220000,
-    "Newham": 362552,
-    "Redbridge": 300000,
-    "Richmond upon Thames": 195000,
-    "Southwark": 310000,
-    "Sutton": 200000,
-    "Tower Hamlets": 340000,
-    "Waltham Forest": 275000,
-    "Wandsworth": 320000,
-    "Westminster": 250000
-};
-
-                // Match population data to boroughs and set the color scale
-                function getColor(value) {
-                    return value > 400000 ? '#084594' :
-                           value > 350000 ? '#2171b5' :
-                           value > 300000 ? '#6baed6' :
-                           value > 250000 ? '#bdd7e7' :
-                                            '#eff3ff';
-                }
-
-                // Style function for the GeoJSON layer
-                function style(feature) {
-                    var boroughName = feature.properties.name;
-                    var value = populationData[boroughName] || 0; // Default to 0 if no data
-                    return {
-                        fillColor: getColor(value),
-                        weight: 1,
-                        color: '#000',
-                        fillOpacity: 0.7
-                    };
-                }
-
-                // Add the GeoJSON layer with styling
                 L.geoJson(geojsonData, {
                     style: style,
                     onEachFeature: function (feature, layer) {
                         var boroughName = feature.properties.name;
                         var value = populationData[boroughName] || 'No data';
-                        layer.bindTooltip(boroughName + ': ' + value);
+                        layer.bindTooltip(`${boroughName}: ${value}`);
                     }
                 }).addTo(choroplethMap);
-            })
-            .catch(error => console.error('Error loading GeoJSON:', error));
+            });
+
+        // Add a color scale legend
+        var legend = L.control({ position: 'bottomright' });
+
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 250000, 300000, 350000, 400000],
+                labels = [],
+                from, to;
+
+            for (var i = 0; i < grades.length; i++) {
+                from = grades[i];
+                to = grades[i + 1];
+                labels.push(
+                    '<i style="background:' + getColor(from + 1) + '"></i> ' +
+                    from + (to ? '&ndash;' + to : '+'));
+            }
+
+            div.innerHTML = '<h4>Population</h4>' + labels.join('<br>');
+            return div;
+        };
+
+        legend.addTo(choroplethMap);
     </script>
 </section>
-
 
 </body>
 
