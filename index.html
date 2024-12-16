@@ -244,16 +244,49 @@
     <h2>Section 7: Maps. Base maps and choropleths</h2>
     <section>
     <p>Chart 1:</p>
-    <p>Base Map | London Boroughs</p>
+<section>
+    <h2>Base Map | London Boroughs</h2>
     <p>This interactive map shows the borders of London boroughs with tooltips displaying their names.</p>
-    <iframe 
-        src="london_base_map_updated.html" 
-        width="100%" 
-        height="600px" 
-        style="border:none;">
-    </iframe>
+    <!-- Map container -->
+    <div id="map" style="height: 600px; width: 100%;"></div>
+
+    <!-- Include Leaflet JS and CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Load the map and GeoJSON -->
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([51.5074, -0.1278], 10); // Centered on London
+
+        // Add a tile layer for the base map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Load GeoJSON data
+        fetch('london-boroughs_1179.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJson(data, {
+                    style: {
+                        color: '#000',
+                        weight: 1,
+                        fillColor: '#6EA8FE',
+                        fillOpacity: 0.7
+                    },
+                    onEachFeature: function (feature, layer) {
+                        // Add tooltips with borough names
+                        if (feature.properties && feature.properties.name) {
+                            layer.bindTooltip(feature.properties.name);
+                        }
+                    }
+                }).addTo(map);
+            })
+            .catch(error => console.error('Error loading GeoJSON:', error));
+    </script>
 </section>
-    
+
 </body>
 
 <section>
