@@ -247,43 +247,52 @@
 <section>
     <h2>Base Map | London Boroughs</h2>
     <p>This interactive map shows the borders of London boroughs with tooltips displaying their names.</p>
-   <!-- Map container -->
-    <div id="map" style="height: 600px; width: 100%;"></div>
+    <!-- Include the necessary Leaflet CSS and JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <!-- Include Leaflet JS and CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Map container -->
+<div id="map" style="height: 600px; width: 100%;"></div>
 
-    <!-- Load the map and GeoJSON -->
-    <script>
-        // Initialize the map
-        var map = L.map('map').setView([51.5074, -0.1278], 10); // Centered on London
+<script>
+    // Initialize the map centered on London
+    var map = L.map('map').setView([51.5074, -0.1278], 10);
 
-        // Add a tile layer for the base map
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
+    // Add a tile layer for the map background
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
 
-        // Load GeoJSON data
-        fetch('london-boroughs_1179.geojson?nocache=' + new Date().getTime())
-    .then(response => response.json())
-    .then(data => {
-        L.geoJson(data, {
-            style: {
-                color: '#000',
-                weight: 1,
-                fillColor: '#6EA8FE',
-                fillOpacity: 0.7
-            },
-            onEachFeature: function (feature, layer) {
-                if (feature.properties && feature.properties.name) {
-                    layer.bindTooltip(feature.properties.name);
-                }
+    // Function to add GeoJSON data with basic styling and tooltips
+    fetch('london-boroughs_1179.geojson?nocache=' + new Date().getTime()) // Cache busting
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        }).addTo(map);
-    })
-    .catch(error => console.error('Error loading GeoJSON:', error));
-    </script>
+            return response.json();
+        })
+        .then(data => {
+            console.log('GeoJSON data loaded:', data); // Debugging: Confirm data is fetched
+            L.geoJson(data, {
+                style: {
+                    color: '#000', // Black borders
+                    weight: 1, // Line thickness
+                    fillColor: '#6EA8FE', // Fill color
+                    fillOpacity: 0.7 // Transparency
+                },
+                onEachFeature: function (feature, layer) {
+                    // Add tooltips with borough names
+                    if (feature.properties && feature.properties.name) {
+                        layer.bindTooltip(feature.properties.name);
+                    }
+                }
+            }).addTo(map);
+        })
+        .catch(error => {
+            console.error('Error loading GeoJSON:', error); // Debugging: Log fetch errors
+        });
+</script>
+
 </section>
 
 <section>
