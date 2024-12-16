@@ -236,10 +236,39 @@
 </head>
 <body>
     <h2>Section 6: Loops. Build a dashboard.</h2>
-    <p>Lorem Ipsum</p>
-</body>
+<p>This section dynamically loads nine ONS charts using Vega-Lite specifications.</p>
 
+<section id="ons-json-charts">
+    <div id="charts-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <!-- Chart placeholders will be dynamically created here -->
+    </div>
+</section>
+
+</body>
+<style>
+    #charts-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    figure {
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+
+    figcaption {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        color: #444;
+    }
+</style>
 </head>
+    
 <body>
     <h2>Section 7: Maps. Base maps and choropleths</h2>
     <section>
@@ -486,6 +515,40 @@
         vegaEmbed ("#Location11", figure_11_spec)
         vegaEmbed ("#Location14", figure_14_spec)
     </script>
+<script>
+    // Array of JSON file paths for the charts
+    const chartFiles = [
+        "charts/CPIAUCSL.json",
+        "charts/DGS10.json",
+        "charts/FEDFUNDS.json",
+        "charts/GDP.json",
+        "charts/M2SL.json",
+        "charts/PAYEMS.json",
+        "charts/PCE.json",
+        "charts/SP500.json",
+        "charts/UNRATE.json"
+    ];
+
+    // Select the container for the charts
+    const container = document.getElementById('charts-container');
+
+    // Loop through the JSON files and dynamically create charts
+    chartFiles.forEach((file, index) => {
+        // Create a container for each chart
+        const figure = document.createElement('figure');
+        figure.id = `chart-${index + 1}`;
+        figure.innerHTML = `<figcaption>Chart ${index + 1}</figcaption>`;
+        
+        // Add the chart container to the grid
+        container.appendChild(figure);
+
+        // Embed the chart with custom size
+        vegaEmbed(`#chart-${index + 1}`, file, { 
+            width: 300, 
+            height: 200 
+        }).catch(console.error);
+    });
+</script>
 
 </body>
     
