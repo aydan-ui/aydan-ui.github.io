@@ -375,7 +375,13 @@
                     onEachFeature: function (feature, layer) {
                         var boroughName = feature.properties.name;
                         var value = populationData[boroughName] || 'No data';
-                        layer.bindTooltip(`${boroughName}: ${value}`);
+                        layer.bindTooltip(
+    `<div style="text-align: left;">
+        <strong>Borough:</strong> ${boroughName}<br>
+        <strong>Population:</strong> ${value}
+     </div>`, 
+    { sticky: true }
+);
                     }
                 }).addTo(choroplethMap);
             });
