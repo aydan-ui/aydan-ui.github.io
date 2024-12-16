@@ -382,25 +382,41 @@
         // Add a color scale legend
         var legend = L.control({ position: 'bottomright' });
 
-        legend.onAdd = function (map) {
-            var div = L.DomUtil.create('div', 'info legend'),
-                grades = [0, 250000, 300000, 350000, 400000],
-                labels = [],
-                from, to;
+      legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 250000, 300000, 350000, 400000],
+        labels = [],
+        from, to;
 
-            for (var i = 0; i < grades.length; i++) {
-                from = grades[i];
-                to = grades[i + 1];
-                labels.push(
-                    '<i style="background:' + getColor(from + 1) + '"></i> ' +
-                    from + (to ? '&ndash;' + to : '+'));
-            }
+    // Add a white box and style
+    div.style.backgroundColor = "white";
+    div.style.padding = "10px";
+    div.style.border = "1px solid #ccc";
+    div.style.borderRadius = "5px";
+    div.style.fontSize = "14px";
 
-            div.innerHTML = '<h4>Population</h4>' + labels.join('<br>');
-            return div;
+    div.innerHTML = '<h4 style="margin: 0; text-align: center;">Population</h4><hr>';
+
+    // Loop through grades and create color squares + labels
+    for (var i = 0; i < grades.length; i++) {
+        from = grades[i];
+        to = grades[i + 1];
+
+        labels.push(
+            '<i style="background:' + getColor(from + 1) + 
+            '; width: 15px; height: 15px; display: inline-block; margin-right: 8px;"></i> ' +
+            from + (to ? '&ndash;' + to : '+')
+        );
+    }
+
+    div.innerHTML += labels.join('<br>');
+    return div;
+};
         };
 
         legend.addTo(choroplethMap);
+
+        
     </script>
 </section>
 
