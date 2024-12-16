@@ -265,25 +265,24 @@
         }).addTo(map);
 
         // Load GeoJSON data
-        fetch('london-boroughs_1179.geojson')
-            .then(response => response.json())
-            .then(data => {
-                L.geoJson(data, {
-                    style: {
-                        color: '#000',
-                        weight: 1,
-                        fillColor: '#6EA8FE',
-                        fillOpacity: 0.7
-                    },
-                    onEachFeature: function (feature, layer) {
-                        // Add tooltips with borough names
-                        if (feature.properties && feature.properties.name) {
-                            layer.bindTooltip(feature.properties.name);
-                        }
-                    }
-                }).addTo(map);
-            })
-            .catch(error => console.error('Error loading GeoJSON:', error));
+        fetch('london-boroughs_1179.geojson?nocache=' + new Date().getTime())
+    .then(response => response.json())
+    .then(data => {
+        L.geoJson(data, {
+            style: {
+                color: '#000',
+                weight: 1,
+                fillColor: '#6EA8FE',
+                fillOpacity: 0.7
+            },
+            onEachFeature: function (feature, layer) {
+                if (feature.properties && feature.properties.name) {
+                    layer.bindTooltip(feature.properties.name);
+                }
+            }
+        }).addTo(map);
+    })
+    .catch(error => console.error('Error loading GeoJSON:', error));
     </script>
 </section>
 
