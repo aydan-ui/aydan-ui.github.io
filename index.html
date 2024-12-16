@@ -312,12 +312,41 @@
             .then(geojsonData => {
                 // Example population data (replace with real data if needed)
                 var populationData = {
-                    "Croydon": 397741,
-                    "Barnet": 395007,
-                    "Ealing": 375340,
-                    "Newham": 362552,
-                    "Brent": 344521
-                };
+                    var populationData = {
+    "Barking and Dagenham": 220000,
+    "Barnet": 395007,
+    "Bexley": 250000,
+    "Brent": 344521,
+    "Bromley": 310000,
+    "Camden": 250000,
+    "City of London": 8000,
+    "Croydon": 397741,
+    "Ealing": 375340,
+    "Enfield": 333000,
+    "Greenwich": 280000,
+    "Hackney": 300000,
+    "Hammersmith and Fulham": 200000,
+    "Haringey": 270000,
+    "Harrow": 250000,
+    "Havering": 240000,
+    "Hillingdon": 320000,
+    "Hounslow": 280000,
+    "Islington": 180000,
+    "Kensington and Chelsea": 150000,
+    "Kingston upon Thames": 175000,
+    "Lambeth": 300000,
+    "Lewisham": 290000,
+    "Merton": 220000,
+    "Newham": 362552,
+    "Redbridge": 300000,
+    "Richmond upon Thames": 195000,
+    "Southwark": 310000,
+    "Sutton": 200000,
+    "Tower Hamlets": 340000,
+    "Waltham Forest": 275000,
+    "Wandsworth": 320000,
+    "Westminster": 250000
+};
 
                 // Match population data to boroughs and set the color scale
                 function getColor(value) {
