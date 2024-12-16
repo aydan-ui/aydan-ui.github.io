@@ -286,6 +286,74 @@
             .catch(error => console.error('Error loading GeoJSON:', error));
     </script>
 </section>
+        <section>
+    <h2>Choropleth Map | London Boroughs Population</h2>
+    <p>This choropleth map shows the population of London boroughs in 2023. Darker shades represent higher populations.</p>
+    <!-- Map container -->
+    <div id="choropleth-map" style="height: 600px; width: 100%;"></div>
+
+    <!-- Load Leaflet JS and CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Load the map and GeoJSON -->
+    <script>
+        // Initialize the choropleth map
+        var choroplethMap = L.map('choropleth-map').setView([51.5074, -0.1278], 10); // Centered on London
+
+        // Add a clean tile layer for the base map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(choroplethMap);
+
+        // Load GeoJSON data and population values
+        fetch('london-boroughs_1179.geojson')
+            .then(response => response.json())
+            .then(geojsonData => {
+                // Example population data (replace with real data if needed)
+                var populationData = {
+                    "Croydon": 397741,
+                    "Barnet": 395007,
+                    "Ealing": 375340,
+                    "Newham": 362552,
+                    "Brent": 344521
+                };
+
+                // Match population data to boroughs and set the color scale
+                function getColor(value) {
+                    return value > 400000 ? '#084594' :
+                           value > 350000 ? '#2171b5' :
+                           value > 300000 ? '#6baed6' :
+                           value > 250000 ? '#bdd7e7' :
+                                            '#eff3ff';
+                }
+
+                // Style function for the GeoJSON layer
+                function style(feature) {
+                    var boroughName = feature.properties.name;
+                    var value = populationData[boroughName] || 0; // Default to 0 if no data
+                    return {
+                        fillColor: getColor(value),
+                        weight: 1,
+                        color: '#000',
+                        fillOpacity: 0.7
+                    };
+                }
+
+                // Add the GeoJSON layer with styling
+                L.geoJson(geojsonData, {
+                    style: style,
+                    onEachFeature: function (feature, layer) {
+                        var boroughName = feature.properties.name;
+                        var value = populationData[boroughName] || 'No data';
+                        layer.bindTooltip(boroughName + ': ' + value);
+                    }
+                }).addTo(choroplethMap);
+            })
+            .catch(error => console.error('Error loading GeoJSON:', error));
+    </script>
+</section>
+
 
 </body>
 
