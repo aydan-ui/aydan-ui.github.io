@@ -288,6 +288,7 @@
 </section>
 
 <section>
+    <section>
     <h2>Choropleth Map | London Boroughs Population</h2>
     <p>This choropleth map shows the population of London boroughs in 2023. Darker shades represent higher populations.</p>
     <!-- Map container -->
@@ -382,42 +383,41 @@
         // Add a color scale legend
         var legend = L.control({ position: 'bottomright' });
 
-      legend.onAdd = function (map) {
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 250000, 300000, 350000, 400000],
-        labels = [],
-        from, to;
+        legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [0, 250000, 300000, 350000, 400000],
+                labels = [],
+                from, to;
 
-    // Add a white box and style
-    div.style.backgroundColor = "white";
-    div.style.padding = "10px";
-    div.style.border = "1px solid #ccc";
-    div.style.borderRadius = "5px";
-    div.style.fontSize = "14px";
+            // Add a white box and style
+            div.style.backgroundColor = "white";
+            div.style.padding = "10px";
+            div.style.border = "1px solid #ccc";
+            div.style.borderRadius = "5px";
+            div.style.fontSize = "14px";
 
-    div.innerHTML = '<h4 style="margin: 0; text-align: center;">Population</h4><hr>';
+            div.innerHTML = '<h4 style="margin: 0; text-align: center;">Population</h4><hr>';
 
-    // Loop through grades and create color squares + labels
-    for (var i = 0; i < grades.length; i++) {
-        from = grades[i];
-        to = grades[i + 1];
+            // Loop through grades and create color squares + labels
+            for (var i = 0; i < grades.length; i++) {
+                from = grades[i];
+                to = grades[i + 1];
 
-        labels.push(
-            '<i style="background:' + getColor(from + 1) + 
-            '; width: 15px; height: 15px; display: inline-block; margin-right: 8px;"></i> ' +
-            from + (to ? '&ndash;' + to : '+')
-        );
-    }
+                labels.push(
+                    '<i style="background:' + getColor(from + 1) + 
+                    '; width: 15px; height: 15px; display: inline-block; margin-right: 8px;"></i> ' +
+                    from + (to ? '&ndash;' + to : '+')
+                );
+            }
 
-    div.innerHTML += labels.join('<br>');
-    return div;
-};
+            div.innerHTML += labels.join('<br>');
+            return div;
         };
 
         legend.addTo(choroplethMap);
-
-        
     </script>
+</section>
+
 </section>
 
 </body>
