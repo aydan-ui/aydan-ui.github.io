@@ -237,7 +237,13 @@
 <body>
     <h2>Section 6: Loops. Build a dashboard.</h2>
 <p>This section dynamically loads nine FRED charts using Vega-Lite specifications.</p>
-    <section id="new-colab-button" style="text-align: center; margin: 30px 0;">
+
+<section id="ons-json-charts">
+    <div id="charts-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        <!-- Chart placeholders will be dynamically created here -->
+    </div>
+</section>
+<section id="new-colab-button" style="text-align: center; margin: 30px 0;">
     <p style="font-size: 1.1rem; color: #444;">
         View additional data visualizations and workflows in my Colab notebook:
     </p>
@@ -259,13 +265,6 @@
         </button>
     </a>
 </section>
-
-<section id="ons-json-charts">
-    <div id="charts-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        <!-- Chart placeholders will be dynamically created here -->
-    </div>
-</section>
-
 </body>
 <style>
     #charts-container {
