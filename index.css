@@ -24,42 +24,6 @@ body {
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
-/* Main Wrapper for Sections */
-.section-wrapper {
-    display: flex;
-    flex-direction: column; /* Stack sections vertically */
-    align-items: center;    /* Center all charts horizontally */
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9; /* Light gray background */
-    border: 2px solid #ddd;    /* Light border around the section */
-    border-radius: 10px;       /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    max-width: 800px;          /* Prevent sections from being too wide */
-}
-
-/* Chart Frame for Each Graph */
-.chart-frame {
-    border: 2px solid #ccc;      /* Light gray border */
-    border-radius: 8px;          /* Rounded corners */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    padding: 15px;
-    margin: 10px auto;           /* Center the chart container */
-    width: 100%;                 /* Make it responsive */
-    max-width: 600px;            /* Set a maximum width */
-    background-color: #fff;      /* White background for clarity */
-    text-align: center;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .section-wrapper {
-        padding: 15px;
-    }
-    .chart-frame {
-        width: 90%; /* Slightly reduce width for small screens */
-    }
-}
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
