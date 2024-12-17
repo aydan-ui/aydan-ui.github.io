@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Time series plot of GDP.",
+  "title": "Gross Domestic Product (GDP) Over Time",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/main/GDP.json",
+    "format": {
+      "type": "json"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": "Date"},
+    "y": {"field": "value", "type": "quantitative", "title": "Value"},
+    "tooltip": [
+      {"field": "date", "type": "temporal"}, 
+      {"field": "value", "type": "quantitative"}
+    ]
+  },
+  "width": 300,
+  "height": 200
+}
