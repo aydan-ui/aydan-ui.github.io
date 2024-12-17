@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "10-Year Treasury Rate Over Time",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/main/DGS10.json",
+    "format": {"type": "json"}
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": "Date"},
+    "y": {"field": "value", "type": "quantitative", "title": "10-Year Treasury Rate (%)"},
+    "tooltip": [{"field": "date", "type": "temporal"}, {"field": "value", "type": "quantitative"}]
+  },
+  "width": 300,
+  "height": 200
+}
