@@ -1,27 +1,14 @@
-<head>
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-    <!-- Add your CSS here -->
-    <style>
-        /* Main Body Styling */
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            color: #414833; /* Dark Moss for primary text */
-            line-height: 1.6;
-            background-color: #f9f9f9; /* Light background */
-            margin: 0 auto;
-            max-width: 800px;
-            padding-top: 60px;
-        }
-
-        /* Add all your CSS code here */
-    </style>
-</head>
+/* Main Body Styling */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #414833; /* Dark Moss for primary text */
+  line-height: 1.6;
+  background-color: #f9f9f9; /* Light background */
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 60px;
+}
 
 /* Profile Picture Styling */
 .profile-pic {
