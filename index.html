@@ -498,13 +498,69 @@
 
     <section>
         <div class="chart-description">
-            <h2>Chart 1 | The Relationship Between GDP and Life Expectancy by Region </h2>
+            <h2>Chart 1 | Milk Price Trends </h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 Analyzed monthly price trends for Milk products using the LRPD dataset. Aggregated median prices by month and calculated a price index relative to the starting price. Visualized trends with a line chart to highlight changes over time.
             </p>
         </div>
         <figure id="Location12"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
+    
+    <section id="colab-notebook" style="text-align: center; margin: 30px 0;">
+    <p style="font-size: 1.1rem; color: #444; margin-bottom: 15px;">
+        View my Google Colab notebook showcasing data visualization workflows and Python code:
+    </p>
+    <a href="https://colab.research.google.com/drive/1EXbsu3l2GCWvxacrg9UBAQFKLbLYX7SQ?usp=sharing">
+        <button id="colab-button" style="
+            background-color: #7f4f24; /* Base color */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        ">
+            Open Colab Notebook
+        </button>
+    </a>
+</section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Chart 2 | Fruit Price Volatility </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               Examined daily price volatility for Fruits using the AutoCPI dataset. Computed the standard deviation of prices per day to measure fluctuations. Visualized volatility with a bar chart to show trends and spikes in price variability.
+            </p>
+        </div>
+        <figure id="Location13"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+     <section id="colab-notebook" style="text-align: center; margin: 30px 0;">
+    <p style="font-size: 1.1rem; color: #444; margin-bottom: 15px;">
+        View my Google Colab notebook showcasing data visualization workflows and Python code:
+    </p>
+    <a href="https://colab.research.google.com/drive/1912EEC4AyG-PbsKmcXcemFXpUPVD_avd?usp=sharing">
+        <button id="colab-button" style="
+            background-color: #7f4f24; /* Base color */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        ">
+            Open Colab Notebook
+        </button>
+    </a>
+</section>
     
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
@@ -528,6 +584,7 @@
         let figure_10_spec = "CC4_replicated.json"
         let figure_11_spec = "CC5_webscraping.json"
         let figure_12_spec = "LRPD DATASET MILK.json"
+        let figure_13_spec = "AUTOCPI DATASET FRUITS.json"
         let figure_14_spec = "wk7_map.json"                                                                                                // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
         vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
@@ -549,6 +606,7 @@
         vegaEmbed ("#Location10", figure_10_spec)
         vegaEmbed ("#Location11", figure_11_spec)
         vegaEmbed ("#Location12", figure_12_spec)
+        vegaEmbed ("#Location13", figure_13_spec)
         vegaEmbed ("#Location14", figure_14_spec)
     </script>
 <script>
