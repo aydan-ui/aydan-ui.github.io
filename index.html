@@ -39,8 +39,11 @@
         
     </style>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMKLFCeEL9bU4mQIB7rGmIcMAhZcXOYroF86C/kRtKLLY" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMKLFCeEL9bU4mQIB7rGmIcMAhZcXOYroF86C/kRtKLLY" crossorigin="anonymous">
 
+    <!-- Include the necessary Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 
 <body> 
@@ -296,9 +299,6 @@
 <section>
     <h2>Base Map | London Boroughs</h2>
     <p>This interactive map shows the borders of London boroughs with tooltips displaying their names.</p>
-    <!-- Include the necessary Leaflet CSS and JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <!-- Map container -->
 <div id="map" style="height: 600px; width: 100%;"></div>
@@ -350,10 +350,6 @@
     <p>This choropleth map shows the population of London boroughs in 2023. Darker shades represent higher populations.</p>
     <!-- Map container -->
     <div id="choropleth-map" style="height: 600px; width: 100%;"></div>
-
-    <!-- Include Leaflet JS and CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Load the GeoJSON and add choropleth map -->
     <script>
