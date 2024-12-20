@@ -131,3 +131,9 @@ footer a {
 footer a:hover {
     color: #7f4f24; /* Burnt Orange for hover effect on footer links */
 }
+
+canvas, figure, img {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
