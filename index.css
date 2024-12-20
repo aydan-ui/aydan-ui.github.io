@@ -131,11 +131,3 @@ footer a {
 footer a:hover {
     color: #7f4f24; /* Burnt Orange for hover effect on footer links */
 }
-
-figure {
-    border: none; /* Ensures no border around figures */
-    padding: 0; /* Ensures no extra space inside the figure */
-    box-shadow: none; /* Removes any shadow effect */
-    background-color: transparent; /* No background color */
-}
-
