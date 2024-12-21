@@ -557,7 +557,20 @@
         </button>
     </a>
 </section>
-    
+
+    <body>
+    <h2>Section 9: CC9. Analytics charts.</h2>
+
+    <section>
+        <div class="chart-description">
+            <h2>Chart 1 | Titanic Age Distribution </h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This visualization shows the age distribution of Titanic passengers, highlighting the frequency of passengers within different age groups. 
+            </p>
+        </div>
+        <figure id="Location15"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+        
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
         <!-- You'll need to change the id of the figure "<figure id="Location3"... -->
@@ -581,7 +594,10 @@
         let figure_11_spec = "CC5_webscraping.json"
         let figure_12_spec = "LRPD DATASET MILK.json"
         let figure_13_spec = "AUTOCPI DATASET FRUITS.json"
-        let figure_14_spec = "wk7_map.json"                                                                                                // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
+        let figure_14_spec = "wk7_map.json"
+        let figure_14_spec = "Titanic_Age.json"
+        
+        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
         vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
 
@@ -604,7 +620,9 @@
         vegaEmbed ("#Location12", figure_12_spec)
         vegaEmbed ("#Location13", figure_13_spec)
         vegaEmbed ("#Location14", figure_14_spec)
+        vegaEmbed ("#Location15", figure_15_spec)
     </script>
+        
 <script>
     // Array of JSON file paths for the charts
     const chartFiles = [
@@ -620,20 +638,20 @@
 ];
 
 
-    // Select the container for the charts
+    // Selecting the container for the charts
     const container = document.getElementById('charts-container');
 
-    // Loop through the JSON files and dynamically create charts
+    // Looping through the JSON files and dynamically create charts
     chartFiles.forEach((file, index) => {
-        // Create a container for each chart
+        // Creating a container for each chart
         const figure = document.createElement('figure');
         figure.id = `chart-${index + 1}`;
         figure.innerHTML = `<figcaption>Chart ${index + 1}</figcaption>`;
         
-        // Add the chart container to the grid
+        // Adding the chart container to the grid
         container.appendChild(figure);
 
-        // Embed the chart with custom size
+        // Embedding the chart with custom size
         vegaEmbed(`#chart-${index + 1}`, file, { 
             width: 300, 
             height: 200 
