@@ -28,6 +28,6 @@
       {"field": "age", "type": "quantitative"}
     ]
   },
-  "width": 1200,  // Place here for larger width
-  "height": 800   // Place here for larger height
+  "width": 1200,  
+  "height": 800   
 }
