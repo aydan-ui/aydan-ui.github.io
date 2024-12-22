@@ -580,6 +580,18 @@
         </div>
         <figure id="Location16"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
+
+        <script>
+        // Titanic Age Distribution Chart
+        const figure_15_spec = "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/Titanic_Age.json";
+        vegaEmbed('#Location15', figure_15_spec)
+            .catch(error => console.error("Error loading Titanic chart:", error));
+
+        // Iris Sepal and Petal Relationship Chart
+        const figure_16_spec = "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/IRIS.json";
+        vegaEmbed('#Location16', figure_16_spec)
+            .catch(error => console.error("Error loading Iris chart:", error));
+    </script>
         
     <!-- Do you want to add more sections? -->
         <!-- Try copying pasting the section above -->
