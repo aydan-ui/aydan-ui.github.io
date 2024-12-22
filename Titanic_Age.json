@@ -28,8 +28,6 @@
       {"field": "age", "type": "quantitative"}
     ]
   },
-  "properties": {
-    "width": 1000,
-    "height": 800
-  }
+  "width": 1200,  // Place here for larger width
+  "height": 800   // Place here for larger height
 }
