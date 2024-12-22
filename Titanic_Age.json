@@ -20,14 +20,13 @@
     "y": {
       "aggregate": "count",
       "type": "quantitative",
-      "title": "Frequency",
-      "scale": {"domain": [0, 35]}
+      "title": "Frequency"
     },
     "tooltip": [
-      {"field": "count", "type": "quantitative"},
-      {"field": "age", "type": "quantitative"}
+      {"field": "age", "type": "quantitative", "title": "Age (Years)"},
+      {"aggregate": "count", "type": "quantitative", "title": "Count"}
     ]
   },
-  "width": 600,  
-  "height": 400   
+  "width": 600,
+  "height": 400
 }
