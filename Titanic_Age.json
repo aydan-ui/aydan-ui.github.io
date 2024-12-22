@@ -1,24 +1,29 @@
 {
-  "title": "Passenger Age Distribution on the Titanic",
-  "subtitle": "Source: Titanic Dataset (Seaborn)",
+  "title": {
+    "text": "Passenger Age Distribution on the Titanic",
+    "subtitle": "Source: Titanic Dataset (Seaborn)",
+    "fontSize": 16,
+    "fontWeight": "bold"
+  },
   "x_axis": {
-    "label": "Age",
-    "unit": "years"
+    "field": "Age",
+    "type": "quantitative",
+    "bin": {"maxbins": 30},
+    "title": "Age (Years)"
   },
   "y_axis": {
-    "label": "Frequency",
-    "unit": "passengers"
+    "aggregate": "count",
+    "type": "quantitative",
+    "title": "Frequency",
+    "scale": {"domain": [0, 35]}
   },
-  "bins": 30,
-  "color": "skyblue",
-  "template": "plotly_white",
-  "font": {
-    "title_size": 18,
-    "font_family": "Arial",
-    "font_color": "black"
+  "tooltip": [
+    {"field": "count", "type": "quantitative"},
+    {"field": "Age", "type": "quantitative"}
+  ],
+  "properties": {
+    "width": 600,
+    "height": 400
   },
-  "alignment": {
-    "title_x": 0.5,
-    "title_y": 0.95
-  }
+  "mark": "bar"
 }
