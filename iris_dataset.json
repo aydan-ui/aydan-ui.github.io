@@ -1,0 +1,52 @@
+{
+  "title": {
+    "text": "Scatter Plot with Regression Line",
+    "subtitle": "Relationship between Sepal Length and Petal Length in Iris Dataset",
+    "fontSize": 16,
+    "fontWeight": "bold"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/iris_dataset.csv",
+    "format": {"type": "csv"}
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "sepal_length",
+      "type": "quantitative",
+      "title": "Sepal Length (cm)",
+      "scale": {"zero": false}  // Remove the left-side gap
+    },
+    "y": {
+      "field": "petal_length",
+      "type": "quantitative",
+      "title": "Petal Length (cm)"
+    },
+    "tooltip": [
+      {"field": "sepal_length", "type": "quantitative", "title": "Sepal Length (cm)"},
+      {"field": "petal_length", "type": "quantitative", "title": "Petal Length (cm)"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": "point"
+    },
+    {
+      "mark": {"type": "line", "color": "red"},
+      "transform": [
+        {
+          "regression": "petal_length",
+          "on": "sepal_length"
+        }
+      ]
+    }
+  ],
+  "width": 600,
+  "height": 400,
+  "config": {
+    "axis": {
+      "labelPadding": 0,  // Reduce padding on axis labels
+      "titlePadding": 10  // Reduce padding for axis titles
+    }
+  }
+}
