@@ -5,25 +5,31 @@
     "fontSize": 16,
     "fontWeight": "bold"
   },
-  "x_axis": {
-    "field": "Age",
-    "type": "quantitative",
-    "bin": {"maxbins": 30},
-    "title": "Age (Years)"
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/titanic_dataset.csv",
+    "format": {"type": "csv"}
   },
-  "y_axis": {
-    "aggregate": "count",
-    "type": "quantitative",
-    "title": "Frequency",
-    "scale": {"domain": [0, 35]}
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "age",
+      "type": "quantitative",
+      "bin": {"maxbins": 30},
+      "title": "Age (Years)"
+    },
+    "y": {
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Frequency",
+      "scale": {"domain": [0, 35]}
+    },
+    "tooltip": [
+      {"field": "count", "type": "quantitative"},
+      {"field": "age", "type": "quantitative"}
+    ]
   },
-  "tooltip": [
-    {"field": "count", "type": "quantitative"},
-    {"field": "Age", "type": "quantitative"}
-  ],
   "properties": {
     "width": 600,
     "height": 400
-  },
-  "mark": "bar"
+  }
 }
