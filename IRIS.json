@@ -9,27 +9,26 @@
     "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/iris_dataset.csv",
     "format": {"type": "csv"}
   },
-  "mark": "point",
-  "encoding": {
-    "x": {
-      "field": "sepal_length",
-      "type": "quantitative",
-      "title": "Sepal Length (cm)",
-      "scale": {"zero": false}  // Remove the left-side gap
-    },
-    "y": {
-      "field": "petal_length",
-      "type": "quantitative",
-      "title": "Petal Length (cm)"
-    },
-    "tooltip": [
-      {"field": "sepal_length", "type": "quantitative", "title": "Sepal Length (cm)"},
-      {"field": "petal_length", "type": "quantitative", "title": "Petal Length (cm)"}
-    ]
-  },
   "layer": [
     {
-      "mark": "point"
+      "mark": "point",
+      "encoding": {
+        "x": {
+          "field": "sepal_length",
+          "type": "quantitative",
+          "title": "Sepal Length (cm)",
+          "scale": {"zero": false}
+        },
+        "y": {
+          "field": "petal_length",
+          "type": "quantitative",
+          "title": "Petal Length (cm)"
+        },
+        "tooltip": [
+          {"field": "sepal_length", "type": "quantitative", "title": "Sepal Length (cm)"},
+          {"field": "petal_length", "type": "quantitative", "title": "Petal Length (cm)"}
+        ]
+      }
     },
     {
       "mark": {"type": "line", "color": "red"},
@@ -38,15 +37,19 @@
           "regression": "petal_length",
           "on": "sepal_length"
         }
-      ]
+      ],
+      "encoding": {
+        "x": {
+          "field": "sepal_length",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "petal_length",
+          "type": "quantitative"
+        }
+      }
     }
   ],
   "width": 600,
-  "height": 400,
-  "config": {
-    "axis": {
-      "labelPadding": 0,  // Reduce padding on axis labels
-      "titlePadding": 10  // Reduce padding for axis titles
-    }
-  }
+  "height": 400
 }
