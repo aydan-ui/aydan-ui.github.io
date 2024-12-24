@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Interactive inflation rate chart for Azerbaijan (2000-2024).",
+  "title": {
+    "text": "Inflation Rate in Azerbaijan",
+    "subtitle": "2000-2024 | Source: STATISTA",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 12,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 500,
+  "height": 350,
+  "background": "#f9f9f9",
+  "config": {
+    "axis": {
+      "grid": true,
+      "gridColor": "#e0e0e0",
+      "labelFont": "Arial",
+      "labelFontSize": 12,
+      "titleFont": "Arial",
+      "titleFontSize": 14
+    }
+  },
+  "mark": {
+    "type": "line",
+    "color": "gray",
+    "strokeWidth": 3,
+    "interpolate": "monotone",
+    "opacity": 1
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/inflation_azerbaijan_2000_2024.csv"
+  },
+  "transform": [
+    {"filter": "datum.Year >= minYear"},
+    {"filter": "datum.Year <= maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2024,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2024,
+      "bind": {
+        "input": "range",
+        "min": 2000,
+        "max": 2024,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "quantitative",
+      "title": "Year",
+      "axis": {
+        "format": "d"
+      }
+    },
+    "y": {
+      "field": "Inflation Rate",
+      "type": "quantitative",
+      "title": "Inflation Rate (%)"
+    },
+    "tooltip": [
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {"field": "Inflation Rate", "type": "quantitative", "title": "Inflation Rate (%)"}
+    ]
+  }
+}
