@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/Commuting_Data-2.csv",
+    "format": {"type": "csv"}
+  },
+  "title": {
+    "text": "Commuting Patterns by City and Transport Mode",
+    "subtitle": "Source: Statista",
+    "anchor": "start",
+    "fontSize": 16,
+    "offset": 30
+  },
+  "params": [
+    {
+      "name": "cityFilter",
+      "value": "All cities",
+      "bind": {
+        "input": "select",
+        "name": "Select a City: ",
+        "options": ["All cities", "London", "Birmingham", "Manchester", "Glasgow", "Leeds"]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "cityFilter === 'All cities' || datum.City === cityFilter"
+    },
+    {
+      "joinaggregate": [
+        {"op": "sum", "field": "Commuters_Count", "as": "City_Total_Commuters"}
+      ],
+      "groupby": ["City"]
+    },
+    {
+      "calculate": "datum.Commuters_Count / datum.City_Total_Commuters * 100",
+      "as": "Commuter_Percentage"
+    }
+  ],
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "x": {
+      "field": "City",
+      "type": "nominal",
+      "axis": {"title": "City"}
+    },
+    "y": {
+      "field": "Transport_Mode",
+      "type": "nominal",
+      "axis": {"title": "Transport Mode"}
+    },
+    "color": {
+      "field": "Commuter_Percentage",
+      "type": "quantitative",
+      "scale": {"scheme": "reds"},
+      "legend": {"title": "Commuter Percentage"}
+    },
+    "tooltip": [
+      {"field": "City", "type": "nominal", "title": "City"},
+      {"field": "Transport_Mode", "type": "nominal", "title": "Transport Mode"},
+      {"field": "Commuters_Count", "type": "quantitative", "title": "Number of Commuters"},
+      {"field": "Commuter_Percentage", "type": "quantitative", "title": "Percentage (%)", "format": ".2f"}
+    ],
+    "opacity": {
+      "condition": {
+        "param": "hover",
+        "value": 1
+      },
+      "value": 0.7
+    }
+  },
+  "selection": {
+    "hover": {
+      "type": "single",
+      "on": "mouseover",
+      "empty": "none"
+    }
+  },
+  "config": {
+    "legend": {
+      "interactive": true
+    }
+  }
+}
