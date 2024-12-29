@@ -589,10 +589,20 @@
         <div class="chart-description">
             <h3>Chart 1 | Inflation Rate in Azerbaijan </h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This interactive chart visualizes Azerbaijan's inflation rate from 2000 to 2024. It allows users to explore inflation trends using sliders to filter specific time periods. The line represents annual inflation rates, providing insights into economic changes over the years, with tooltips for precise values. Data source: STATISTA  
+                This interactive chart visualizes Azerbaijan's inflation rate from 2000 to 2024. It allows users to explore inflation trends using sliders to filter specific time periods. The line represents annual inflation rates, providing insights into economic changes over the years, with tooltips for precise values.  
             </p>
         </div>
         <figure id="Location17"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+
+        <section>
+        <div class="chart-description">
+            <h3>Chart 2 | Commuting Patterns in the UK </h3>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                This interactive heatmap visualizes commuting patterns across cities and transport modes in the UK. Users can filter by city using the dropdown menu to explore detailed commuter percentages. The color intensity represents commuter proportions, with tooltips providing additional insights. This visualization highlights variations in transport preferences, offering a clear overview of urban mobility trends.  
+            </p>
+        </div>
+        <figure id="Location18"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
     </section>
         
     <!-- Do you want to add more sections? -->
@@ -622,6 +632,7 @@
         let figure_15_spec = "Titanic_Age.json"
         let figure_16_spec = "IRIS.json"
         let figure_17_spec = "inf_azerb.json"
+        let figure_17_spec = "HeatMap_Commuting.json"
         
         // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
@@ -649,6 +660,7 @@
         vegaEmbed ("#Location15", figure_15_spec)
         vegaEmbed ("#Location16", figure_16_spec).catch(console.error);
         vegaEmbed ("#Location17", figure_17_spec)
+        vegaEmbed ("#Location18", figure_18_spec)
     </script>
         
 <script>
