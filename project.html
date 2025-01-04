@@ -117,7 +117,32 @@
             </p>
         </div>
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
+       
+         <!-- Button integration starts here -->
+        <div id="colab-notebook" style="text-align: center; margin-top: 20px;">
+            <p style="font-size: 1.1rem; color: #444; margin-bottom: 15px;">
+                View the Google Colab notebook with data visualization workflows and Python code:
+            </p>
+            <a href="https://colab.research.google.com/drive/1C0YXUWT1AfSW1AkL2jJQpfCKqOYbZwAe?usp=sharing">
+                <button id="colab-button" style="
+                    background-color: #005f73; 
+                    border: none;
+                    color: white;
+                    padding: 12px 20px; 
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    border-radius: 8px; 
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.2s ease; 
+                " onmouseover="this.style.backgroundColor='#0a9396'; this.style.transform='scale(1.05)';" 
+                   onmouseout="this.style.backgroundColor='#005f73'; this.style.transform='scale(1)';">
+                    Open Colab Notebook
+                </button>
+            </a>
+        </div>
+        <!-- Button integration ends here -->
     </section>
 
     <section id="conclusion">
