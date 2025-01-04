@@ -1,109 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-   
 <head>
-     <link rel="stylesheet" type="text/css" href="project.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Transport Analysis</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: linear-gradient(120deg, #f0f8ff, #e6e6fa);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #003366;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #00509e;
-            padding: 0.5rem 0;
-        }
-
-        nav a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 1rem auto;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background: #003366;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-    </style>
+    <title>Movie Ratings and Trends</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Public Transport in London</h1>
-        <p>Analyzing Trends and Insights</p>
+        <h1>Movie Ratings and Trends</h1>
+        <p>Exploring audience preferences across genres and time</p>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <a href="#introduction">Introduction</a>
-        <a href="#data">Data</a>
         <a href="#visualizations">Visualizations</a>
+        <a href="#insights">Insights</a>
         <a href="#conclusion">Conclusion</a>
     </nav>
 
+    <!-- Introduction Section -->
     <section id="introduction">
         <h2>Introduction</h2>
-        <p>This project analyzes public transport usage in London to uncover trends, assess service efficiency, and highlight accessibility challenges. Through data-driven insights and interactive visualizations, the study provides actionable recommendations to improve transport services.</p>
+        <p>
+            This project analyzes trends in movie ratings across different genres and years, providing insights into audience preferences
+            and the evolution of film quality over time.
+        </p>
     </section>
 
-    <section id="data">
-        <h2>Data</h2>
-        <p>The data for this project is sourced from Transport for London (TfL) API and the London Datastore. Key datasets include passenger flow, route usage, and accessibility levels.</p>
-    </section>
-
+    <!-- Visualizations Section -->
     <section id="visualizations">
         <h2>Visualizations</h2>
-        <p>Interactive visualizations showcasing key trends and insights:</p>
+
+        <section>
+            <div class="chart-description">
+                <h3>Chart 1 | Overall Ratings by Genre</h3>
+                <p>
+                    This bar chart illustrates the average audience ratings for different genres. It provides a clear comparison of how each genre performs in terms of audience satisfaction.
+                </p>
+            </div>
+            <figure id="Location1"></figure> <!-- VegaLite chart for Chart 1 -->
+        </section>
+
+        <section>
+            <div class="chart-description">
+                <h3>Chart 2 | Ratings Trends for Top Genres Over Time</h3>
+                <p>
+                    This line chart tracks the evolution of average ratings for the top genres from 1990 to 2024. Use the dropdown and slider filters to explore specific genres and years.
+                </p>
+            </div>
+            <figure id="Location2"></figure> <!-- VegaLite chart for Chart 2 -->
+        </section>
+
+        <section>
+            <div class="chart-description">
+                <h3>Chart 3 | Distribution of Ratings Across All Genres</h3>
+                <p>
+                    The histogram shows the distribution of ratings across all genres. It highlights how audience ratings are spread, with most clustering between 6 and 8.
+                </p>
+            </div>
+            <figure id="Location3"></figure> <!-- VegaLite chart for Chart 3 -->
+        </section>
+
+        <section>
+            <div class="chart-description">
+                <h3>Chart 4 | Success Rates of Genres</h3>
+                <p>
+                    This bar chart shows the proportion of highly rated movies (vote average > 7) for each genre, emphasizing which genres consistently produce quality films.
+                </p>
+            </div>
+            <figure id="Location4"></figure> <!-- VegaLite chart for Chart 4 -->
+        </section>
+
+        <section>
+            <div class="chart-description">
+                <h3>Chart 5 | Average Ratings Over Time</h3>
+                <p>
+                    This interactive chart displays how average ratings have changed over time for all genres. Use filters to analyze specific trends.
+                </p>
+            </div>
+            <figure id="Location5"></figure> <!-- VegaLite chart for Chart 5 -->
+        </section>
+    </section>
+
+    <!-- Insights Section -->
+    <section id="insights">
+        <h2>Insights</h2>
+        <p>
+            This project reveals several key trends:
+        </p>
         <ul>
-            <li>Peak Hour Traffic Analysis</li>
-            <li>Route Popularity</li>
-            <li>Accessibility Heatmap</li>
-            <li>Delay and Reliability Trends</li>
+            <li><strong>Drama and Documentary</strong> are the highest-rated genres overall.</li>
+            <li><strong>Animation</strong> has seen steady improvement in ratings over the years.</li>
+            <li><strong>Comedy and Horror</strong> exhibit the most variability in ratings, reflecting polarizing audience reception.</li>
         </ul>
     </section>
 
+    <!-- Conclusion Section -->
     <section id="conclusion">
         <h2>Conclusion</h2>
-        <p>The analysis highlights key insights into public transport usage in London, including peak travel hours, underserved areas, and route popularity. Recommendations include adjusting schedules during peak hours and improving accessibility in less-served boroughs.</p>
+        <p>
+            By exploring the dynamics of movie ratings across genres and time, this project provides valuable insights for industry stakeholders.
+            Future work could incorporate demographic data and explore revenue impacts alongside ratings.
+        </p>
     </section>
 
+    <!-- Vega-Lite Embedding -->
+    <script>
+        let figure_1_spec = "visualization1.json"; // Bar chart: Overall Ratings by Genre
+        let figure_2_spec = "visualization2.json"; // Line chart: Ratings Trends Over Time
+        let figure_3_spec = "visualization3.json"; // Histogram: Ratings Distribution
+        let figure_4_spec = "visualization4.json"; // Bar chart: Success Rates by Genre
+        let figure_5_spec = "visualization5.json"; // Interactive chart: Average Ratings Over Time
+
+        vegaEmbed("#Location1", figure_1_spec).catch(console.error);
+        vegaEmbed("#Location2", figure_2_spec).catch(console.error);
+        vegaEmbed("#Location3", figure_3_spec).catch(console.error);
+        vegaEmbed("#Location4", figure_4_spec).catch(console.error);
+        vegaEmbed("#Location5", figure_5_spec).catch(console.error);
+    </script>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Public Transport Analysis Project | Created by Aydan Abbasguliyeva</p>
+        <p>&copy; 2025 Movie Ratings Analysis Project. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
