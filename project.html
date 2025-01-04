@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-   
+
 <head>
-     <link rel="stylesheet" type="text/css" href="project.css">
+    <link rel="stylesheet" type="text/css" href="project.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Transport Analysis</title>
+    <title>Trends in Movie Ratings</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,31 +61,22 @@
             padding: 1rem 0;
             margin-top: 2rem;
         }
+
+        figure {
+            margin: 2rem 0;
+        }
     </style>
 
-       <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <!-- Link to Vega-Lite libraries -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-   <style>
-        #chartGrid {
-            display: flex;
-        }
-        
-    </style>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMKLFCeEL9bU4mQIB7rGmIcMAhZcXOYroF86C/kRtKLLY" crossorigin="anonymous">
-
-    <!-- Include the necessary Leaflet CSS and JS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-   
 </head>
+
 <body>
     <header>
         <h1>Trends in Movie Ratings</h1>
-        <p> Analyzing Audience Preferences Across Genres and Time</p>
+        <p>Analyzing Audience Preferences Across Genres and Time</p>
     </header>
 
     <nav>
@@ -97,66 +88,62 @@
 
     <section id="introduction">
         <h2>Introduction</h2>
-        <p>What drives audience preferences, and how have movie ratings evolved across genres over time? For making data-driven decisions, it is essential for the companies in the entertainment industry to understand the movie ratings and audience preferences. This analysis, conducted based on the dataset about popular movies from TMDb, delves into key indicators including movie vote averages, genres, release years. This study can be helpful for producers, marketers and movie platforms in shaping their content strategies. Nowadays, the companies including Disney+ and Netflix are rising in popularity. Therefore, analysing genre-specific trends in movie industry can be beneficial to reveal genres performing high consistently, preferences of audience and crucial shifts in ratings for these type of companies in terms of improving the quality of streaming services. </p>
+        <p>
+            What drives audience preferences, and how have movie ratings evolved across genres over time? For making
+            data-driven decisions, it is essential for the companies in the entertainment industry to understand the
+            movie ratings and audience preferences. This analysis, conducted based on the dataset about popular movies
+            from TMDb, delves into key indicators, including movie vote averages, genres, and release years. This study
+            can be helpful for producers, marketers, and movie platforms in shaping their content strategies.
+        </p>
     </section>
 
     <section id="data">
         <h2>Data</h2>
-        <p>The analysis is conducted based on open API from TMDb. It is a comprehensive dataset that has key variables like vote averages, release dates, genres and popularity scores. The data covers multiple decades which is very beneficial for getting a comprehensive view to audience preferences throughout provided timeframe.</p>
+        <p>
+            The analysis is conducted based on an open API from TMDb. It is a comprehensive dataset that has key
+            variables like vote averages, release dates, genres, and popularity scores. The data covers multiple decades,
+            providing a comprehensive view of audience preferences throughout the timeframe.
+        </p>
     </section>
 
     <section id="visualizations">
         <h2>Visualizations</h2>
         <p>Interactive visualizations showcasing key trends and insights:</p>
-    <section>
+
         <div class="chart-description">
-            <h3>Chart 1 | The Top Ten Most Popular Movies </h3>
-            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                This bar graph illustrates the top 10 most popular movies based on their popularity scores. "Gladiator II" and "Your Fault" score the most with viewers, whilst "Elevation" is the least one in this list. 
+            <h3>Chart 1 | The Top Ten Most Popular Movies</h3>
+            <p>
+                This bar graph illustrates the top 10 most popular movies based on their popularity scores. "Gladiator
+                II" and "Your Fault" score the most with viewers, whilst "Elevation" is the least one in this list.
             </p>
+            <figure id="Location1"></figure>
         </div>
-        <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
-    </section>
     </section>
 
     <section id="conclusion">
         <h2>Conclusion</h2>
-        <p>The analysis highlights key insights into public transport usage in London, including peak travel hours, underserved areas, and route popularity. Recommendations include adjusting schedules during peak hours and improving accessibility in less-served boroughs.</p>
+        <p>
+            The analysis highlights key insights into movie ratings, including trends across genres, audience preferences,
+            and their evolution over time. These findings can guide companies in optimizing content strategies and
+            improving streaming services.
+        </p>
     </section>
-  <!-- This is a script, it's a way to run JavaScript code on the page -->
-    <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        let figure_1_spec = "Project_Chart_1.json"; // We're storing the URL of the graph we want to display in a variable
-        //let figure_2_spec =  
-        //let figure_3_spec = 
-        //let figure_4_spec = 
-        //let figure_5_spec = 
-        //let figure_6_spec = 
-        //let figure_7_spec = 
-        //let figure_8_spec 
-        
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
-
-        vegaEmbed ("#Location1", figure_1_spec).catch(console.error); // Log errors if embedding fails
-        //vegaEmbed ("#Location3", figure_3_spec)
-        //vegaEmbed ("#Location4", figure_4_spec)
-        //vegaEmbed ("#Location5", figure_5_spec)
-        //vegaEmbed ("#Location6", figure_6_spec)
-        //vegaEmbed ("#Location7", figure_7_spec)
-        //vegaEmbed ("#Location8", figure_8_spec)
-       
-    </script>
     <footer>
-        <p>&copy; 2025 Public Transport Analysis Project | Created by Aydan Abbasguliyeva</p>
+        <p>&copy; 2025 Trends in Movie Ratings | Created by Aydan Abbasguliyeva</p>
     </footer>
+
+    <script>
+        // Chart specifications
+        const charts = [
+            { id: "#Location1", spec: "Project_Chart_1.json" }
+        ];
+
+        // Embed charts dynamically
+        charts.forEach(chart => {
+            vegaEmbed(chart.id, chart.spec).catch(console.error);
+        });
+    </script>
 </body>
+
 </html>
