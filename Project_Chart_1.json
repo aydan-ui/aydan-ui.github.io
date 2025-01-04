@@ -52,7 +52,7 @@
     "title": {"fontSize": 18, "anchor": "start", "color": "#333"},
     "axis": {
       "titleFontSize": 12,
-      "labelFontSize": 10,
+      "labelFontSize": 10
     }
   },
   "title": "Top 10 Most Popular Movies"
