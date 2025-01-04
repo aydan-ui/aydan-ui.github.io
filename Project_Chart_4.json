@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Popularity Trend for Selected Genres by Release Year",
+  "description": "Popularity Trend for Top 5 Genres by Release Year",
   "data": {
     "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/Cleaned_and_Processed_Movie_Data.csv",
     "format": {"type": "csv"}
@@ -93,5 +93,5 @@
       }
     ]
   },
-  "title": "Popularity Trend for Selected Genres by Release Year"
+  "title": "Popularity Trend for Top 5 Genres by Release Year"
 }
