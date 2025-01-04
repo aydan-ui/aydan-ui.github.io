@@ -28,8 +28,7 @@
     <section id="introduction">
         <h2>Introduction</h2>
         <p>
-            This project analyzes trends in movie ratings across different genres and years, providing insights into audience preferences
-            and the evolution of film quality over time.
+            This project analyzes trends in movie ratings across different genres and years, uncovering insights into audience preferences and how the quality of films has evolved over time.
         </p>
     </section>
 
@@ -41,50 +40,40 @@
             <div class="chart-description">
                 <h3>Chart 1 | Overall Ratings by Genre</h3>
                 <p>
-                    This bar chart illustrates the average audience ratings for different genres. It provides a clear comparison of how each genre performs in terms of audience satisfaction.
+                    This bar chart compares the average audience ratings for different genres, showcasing which genres perform consistently well.
                 </p>
             </div>
-            <figure id="Location1"></figure> <!-- VegaLite chart for Chart 1 -->
+            <figure id="Location1"></figure>
         </section>
 
         <section>
             <div class="chart-description">
                 <h3>Chart 2 | Ratings Trends for Top Genres Over Time</h3>
                 <p>
-                    This line chart tracks the evolution of average ratings for the top genres from 1990 to 2024. Use the dropdown and slider filters to explore specific genres and years.
+                    This line chart tracks the evolution of average ratings for the top genres from 1990 to 2024, offering insights into changing audience preferences.
                 </p>
             </div>
-            <figure id="Location2"></figure> <!-- VegaLite chart for Chart 2 -->
+            <figure id="Location2"></figure>
         </section>
 
         <section>
             <div class="chart-description">
                 <h3>Chart 3 | Distribution of Ratings Across All Genres</h3>
                 <p>
-                    The histogram shows the distribution of ratings across all genres. It highlights how audience ratings are spread, with most clustering between 6 and 8.
+                    The histogram visualizes the distribution of ratings across genres, showing the spread of audience reception.
                 </p>
             </div>
-            <figure id="Location3"></figure> <!-- VegaLite chart for Chart 3 -->
+            <figure id="Location3"></figure>
         </section>
 
         <section>
             <div class="chart-description">
                 <h3>Chart 4 | Success Rates of Genres</h3>
                 <p>
-                    This bar chart shows the proportion of highly rated movies (vote average > 7) for each genre, emphasizing which genres consistently produce quality films.
+                    This bar chart displays the proportion of highly rated movies (vote average > 7) for each genre.
                 </p>
             </div>
-            <figure id="Location4"></figure> <!-- VegaLite chart for Chart 4 -->
-        </section>
-
-        <section>
-            <div class="chart-description">
-                <h3>Chart 5 | Average Ratings Over Time</h3>
-                <p>
-                    This interactive chart displays how average ratings have changed over time for all genres. Use filters to analyze specific trends.
-                </p>
-            </div>
-            <figure id="Location5"></figure> <!-- VegaLite chart for Chart 5 -->
+            <figure id="Location4"></figure>
         </section>
     </section>
 
@@ -92,12 +81,12 @@
     <section id="insights">
         <h2>Insights</h2>
         <p>
-            This project reveals several key trends:
+            Key trends identified:
         </p>
         <ul>
-            <li><strong>Drama and Documentary</strong> are the highest-rated genres overall.</li>
-            <li><strong>Animation</strong> has seen steady improvement in ratings over the years.</li>
-            <li><strong>Comedy and Horror</strong> exhibit the most variability in ratings, reflecting polarizing audience reception.</li>
+            <li><strong>Drama and Documentary:</strong> Consistently high ratings highlight their wide appeal.</li>
+            <li><strong>Animation:</strong> Steady improvement in ratings reflects advancements in storytelling.</li>
+            <li><strong>Comedy and Horror:</strong> Most variability in ratings, suggesting polarizing audience reactions.</li>
         </ul>
     </section>
 
@@ -105,24 +94,21 @@
     <section id="conclusion">
         <h2>Conclusion</h2>
         <p>
-            By exploring the dynamics of movie ratings across genres and time, this project provides valuable insights for industry stakeholders.
-            Future work could incorporate demographic data and explore revenue impacts alongside ratings.
+            By exploring movie ratings across genres and time, this project provides valuable insights for filmmakers and streaming platforms. Future analyses could incorporate additional factors like demographics and revenue to build a more comprehensive picture.
         </p>
     </section>
 
     <!-- Vega-Lite Embedding -->
     <script>
-        let figure_1_spec = "visualization1.json"; // Bar chart: Overall Ratings by Genre
-        let figure_2_spec = "visualization2.json"; // Line chart: Ratings Trends Over Time
-        let figure_3_spec = "visualization3.json"; // Histogram: Ratings Distribution
-        let figure_4_spec = "visualization4.json"; // Bar chart: Success Rates by Genre
-        let figure_5_spec = "visualization5.json"; // Interactive chart: Average Ratings Over Time
+        let figure_1_spec = "visualization1.json";
+        let figure_2_spec = "visualization2.json";
+        let figure_3_spec = "visualization3.json";
+        let figure_4_spec = "visualization4.json";
 
         vegaEmbed("#Location1", figure_1_spec).catch(console.error);
         vegaEmbed("#Location2", figure_2_spec).catch(console.error);
         vegaEmbed("#Location3", figure_3_spec).catch(console.error);
         vegaEmbed("#Location4", figure_4_spec).catch(console.error);
-        vegaEmbed("#Location5", figure_5_spec).catch(console.error);
     </script>
 
     <!-- Footer -->
