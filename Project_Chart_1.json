@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Top 10 Most Popular Movies",
+  "data": {
+    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/popular_movies-4.csv",
+    "format": {"type": "csv", "parse": {"popularity": "number"}}
+  },
+  "transform": [
+    {
+      "sort": [{"field": "popularity", "order": "descending"}],
+      "window": [{"op": "rank", "as": "rank"}],
+      "frame": [null, null]
+    },
+    {"filter": "datum.rank <= 10"}
+  ],
+  "mark": {
+    "type": "bar",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "popularity",
+      "type": "quantitative",
+      "title": "Popularity Score",
+      "axis": {"titleFontSize": 12, "labelFontSize": 10}
+    },
+    "y": {
+      "field": "title",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Movie Title",
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 14,
+        "labelPadding": 10  
+      }
+    },
+    "color": {
+      "field": "popularity",
+      "type": "quantitative",
+      "scale": {"scheme": "blues"},
+      "legend": {"title": "Popularity Score"}
+    },
+    "tooltip": [
+      {"field": "title", "type": "nominal", "title": "Title"},
+      {"field": "popularity", "type": "quantitative", "title": "Popularity Score", "format": ","},
+      {"field": "release_date", "type": "temporal", "title": "Release Date"}
+    ]
+  },
+  "config": {
+    "bar": {"size": 18},
+    "title": {"fontSize": 18, "anchor": "start", "color": "#333"},
+    "axis": {
+      "titleFontSize": 12,
+      "labelFontSize": 10,
+    }
+  },
+  "title": "Top 10 Most Popular Movies"
+}
