@@ -6,6 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trends in Movie Ratings</title>
+   <!-- This is a link to the vega-lite which we're using to make graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+   
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -63,11 +68,7 @@
         }
     </style>
 
-       <!-- This is a link to the vega-lite which we're using to make graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
+      
    <style>
         #chartGrid {
             display: flex;
@@ -124,38 +125,16 @@
         <p>The analysis highlights key insights into public transport usage in London, including peak travel hours, underserved areas, and route popularity. Recommendations include adjusting schedules during peak hours and improving accessibility in less-served boroughs.</p>
     </section>
     
-  <!-- This is a script, it's a way to run JavaScript code on the page -->
+  
     <script>
-        // This is a comment in JavaScript - it's a different language to HTML and CSS
 
-        let figure_1_spec = "Project_Chart_1.json"; // We're storing the URL of the graph we want to display in a variable
-        //let figure_2_spec =  
-        //let figure_3_spec = 
-        //let figure_4_spec = 
-        //let figure_5_spec = 
-        //let figure_6_spec = 
-        //let figure_7_spec = 
-        //let figure_8_spec 
+        let figure_1_spec = "Project_Chart_1.json"; 
+      
+        vegaEmbed ('#Location1', figure_1_spec) 
         
-        // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
-
-        vegaEmbed ('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
-
-        // Do you want to add more graphs?
-        // try defining a new variable for figure_3_spec, adding VegaEmbed for Location3, and adding a new section in the HTML
-        // e.g. 
-        // let figure_3_spec = ...
-        // vegaEmbed('#Location3', figure_3_spec)
-
-        //vegaEmbed ("#Location2", figure_2_spec)
-        //vegaEmbed ("#Location3", figure_3_spec)
-        //vegaEmbed ("#Location4", figure_4_spec)
-        //vegaEmbed ("#Location5", figure_5_spec)
-        //vegaEmbed ("#Location6", figure_6_spec)
-        //vegaEmbed ("#Location7", figure_7_spec)
-        //vegaEmbed ("#Location8", figure_8_spec)
        
     </script>
+   
     <footer>
         <p>&copy; 2025 Trends in Movie Ratings | Created by Aydan Abbasguliyeva</p>
     </footer>
