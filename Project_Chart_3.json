@@ -8,7 +8,7 @@
   "transform": [
     {
       "calculate": "split(datum.genre_ids, ',')",
-      "as": "genre_list",
+      "as": "genre_list"
     },
     {
       "flatten": ["genre_list"]
@@ -88,6 +88,9 @@
       }
     }
   ],
-  "title": "Genre Distribution of Movies with Percentages"
+  "title": {
+    "text": "Genre Distribution of Movies with Percentages",
+    "anchor": "start",
+    "offset": 20
+  }
 }
-v
