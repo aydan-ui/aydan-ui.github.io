@@ -215,6 +215,42 @@
             </a>
         </div>
         <!-- Button integration ends here -->
+          
+    </section>
+        <section>
+        <div class="chart-description">
+            <h3>Chart 4 | Popularity Trend for Selected Genres by Release Year </h3>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               This interactive line chart illustrates the trends by the release years in top 5 genres. It reveals that there was a sharp increase in 1999 and 2023 perhaps due to the fact that in these years there were blockbuster releases including Avatar.  Similarly, Science Fiction saw significant inclines in 1997, 2019 and 2023 which is linked to computer-generated images and high profile releases. We can see increases in Animation trends in 2006 and 2023 which are most likely affected by animated films and the popularity of streaming platforms. The trends are beneficial in terms of seeing how the technological advancements in the movie sector, blockbusters and evolving audience preferences over the time affect the popularity trends of genres.   
+            </p>
+        </div>
+        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+       
+         <!-- Button integration starts here -->
+        <div id="colab-notebook" style="text-align: center; margin-top: 20px;">
+            <p style="font-size: 1.1rem; color: #444; margin-bottom: 15px;">
+                View my Google Colab notebook with data visualization workflows and Python code:
+            </p>
+            <a href="https://colab.research.google.com/drive/1C0YXUWT1AfSW1AkL2jJQpfCKqOYbZwAe?usp=sharing">
+                <button id="colab-button" style="
+                    background-color: #005f73; 
+                    border: none;
+                    color: white;
+                    padding: 12px 20px; 
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    border-radius: 8px; 
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.2s ease; 
+                " onmouseover="this.style.backgroundColor='#0a9396'; this.style.transform='scale(1.05)';" 
+                   onmouseout="this.style.backgroundColor='#005f73'; this.style.transform='scale(1)';">
+                    Open Colab Notebook
+                </button>
+            </a>
+        </div>
+        <!-- Button integration ends here -->
     </section>
        
     <section id="conclusion">
@@ -228,10 +264,12 @@
         let figure_1_spec = "Project_Chart_1.json"
         let figure_2_spec = "Project_Chart_2.json"
         let figure_3_spec = "Project_Chart_3.json"
+        let figure_4_spec = "Project_Chart_4.json"
       
         vegaEmbed ('#Location1', figure_1_spec) 
         vegaEmbed ('#Location2', figure_2_spec)
         vegaEmbed ('#Location3', figure_3_spec)
+        vegaEmbed ('#Location4', figure_4_spec)
        
     </script>
    
