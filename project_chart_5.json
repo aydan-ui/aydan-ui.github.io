@@ -1,0 +1,126 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "background": "white"
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "size": 20},
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "(datum.genre_name === 'Adventure')",
+            "value": "orange"
+          },
+          "value": "#87CEEB"
+        },
+        "tooltip": [
+          {"field": "genre_name", "title": "Genre", "type": "nominal"},
+          {
+            "field": "vote_count",
+            "format": ",.0f",
+            "title": "Average Vote Count",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "field": "genre_name",
+          "sort": "-y",
+          "title": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "vote_count",
+          "scale": {"domain": [0, 9732]},
+          "title": "Average Vote Count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "dy": -10,
+        "fontSize": 12
+      },
+      "encoding": {
+        "color": {
+          "condition": {
+            "test": "(datum.genre_name === 'Adventure')",
+            "value": "orange"
+          },
+          "value": "#87CEEB"
+        },
+        "text": {
+          "field": "vote_count",
+          "format": ",.0f",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {"field": "genre_name", "title": "Genre", "type": "nominal"},
+          {
+            "field": "vote_count",
+            "format": ",.0f",
+            "title": "Average Vote Count",
+            "type": "quantitative"
+          }
+        ],
+        "x": {
+          "field": "genre_name",
+          "sort": "-y",
+          "title": "Genre",
+          "type": "nominal"
+        },
+        "y": {
+          "field": "vote_count",
+          "scale": {"domain": [0, 9732]},
+          "title": "Average Vote Count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {"name": "data-21e9d1aa98135a04a74dddc44aa763c2"},
+      "mark": {
+        "type": "rule",
+        "color": "red",
+        "size": 1.5,
+        "strokeDash": [5, 5]
+      },
+      "encoding": {"y": {"field": "y", "type": "quantitative"}}
+    }
+  ],
+  "data": {"name": "data-537c765b1e79bbede637017497a2e296"},
+  "height": 400,
+  "title": {
+    "text": "Average Vote Count by Genre",
+    "subtitle": "This chart shows the average vote count for movies in each genre. The red dashed line indicates the overall average.",
+    "fontSize": 18,
+    "subtitleFontSize": 14,
+    "subtitleFontStyle": "italic"
+  },
+  "width": 700,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-537c765b1e79bbede637017497a2e296": [
+      {"genre_name": "Adventure", "vote_count": 8732},
+      {"genre_name": "Science Fiction", "vote_count": 8008},
+      {"genre_name": "Fantasy", "vote_count": 7078},
+      {"genre_name": "Family", "vote_count": 6293},
+      {"genre_name": "War", "vote_count": 5891},
+      {"genre_name": "Action", "vote_count": 5734},
+      {"genre_name": "Crime", "vote_count": 5510},
+      {"genre_name": "Animation", "vote_count": 5222},
+      {"genre_name": "Drama", "vote_count": 4965},
+      {"genre_name": "Mystery", "vote_count": 4656},
+      {"genre_name": "History", "vote_count": 4537},
+      {"genre_name": "Comedy", "vote_count": 4491},
+      {"genre_name": "Thriller", "vote_count": 3954},
+      {"genre_name": "Romance", "vote_count": 3399},
+      {"genre_name": "Horror", "vote_count": 2151}
+    ],
+    "data-21e9d1aa98135a04a74dddc44aa763c2": [{"y": 5374.733333333334}]
+  }
+}
