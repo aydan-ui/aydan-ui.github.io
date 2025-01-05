@@ -1,59 +1,205 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Top 10 Most Popular Movies",
-  "data": {
-    "url": "https://raw.githubusercontent.com/aydan-ui/aydan-ui.github.io/refs/heads/main/popular_movies-4.csv",
-    "format": {"type": "csv", "parse": {"popularity": "number"}}
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "title": {"anchor": "start", "fontSize": 16}
   },
-  "transform": [
-    {
-      "sort": [{"field": "popularity", "order": "descending"}],
-      "window": [{"op": "rank", "as": "rank"}],
-      "frame": [null, null]
-    },
-    {"filter": "datum.rank <= 10"}
-  ],
-  "mark": {
-    "type": "bar",
-    "tooltip": true
-  },
+  "data": {"name": "data-dcc079eb2b64a723b2d803ccb2f8be5b"},
+  "mark": {"type": "bar"},
   "encoding": {
+    "color": {
+      "field": "popularity",
+      "legend": null,
+      "scale": {"scheme": "blues"},
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {"field": "title", "title": "Title", "type": "nominal"},
+      {
+        "field": "popularity",
+        "format": ",.3f",
+        "title": "Popularity Score",
+        "type": "quantitative"
+      },
+      {"field": "release_date", "title": "Release Date", "type": "nominal"}
+    ],
     "x": {
       "field": "popularity",
-      "type": "quantitative",
       "title": "Popularity Score",
-      "axis": {"titleFontSize": 12, "labelFontSize": 10}
+      "type": "quantitative"
     },
     "y": {
       "field": "title",
-      "type": "nominal",
       "sort": "-x",
       "title": "Movie Title",
-      "axis": {
-        "labelFontSize": 12,
-        "titleFontSize": 14,
-        "labelPadding": 10  
-      }
-    },
-    "color": {
-      "field": "popularity",
-      "type": "quantitative",
-      "scale": {"scheme": "blues"},
-      "legend": {"title": "Popularity Score"}
-    },
-    "tooltip": [
-      {"field": "title", "type": "nominal", "title": "Title"},
-      {"field": "popularity", "type": "quantitative", "title": "Popularity Score", "format": ","},
-      {"field": "release_date", "type": "temporal", "title": "Release Date"}
-    ]
-  },
-  "config": {
-    "bar": {"size": 18},
-    "title": {"fontSize": 18, "anchor": "start", "color": "#333"},
-    "axis": {
-      "titleFontSize": 12,
-      "labelFontSize": 10
+      "type": "nominal"
     }
   },
-  "title": "Top 10 Most Popular Movies"
+  "height": 400,
+  "title": "Top 10 Most Popular Movies",
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-dcc079eb2b64a723b2d803ccb2f8be5b": [
+      {
+        "adult": false,
+        "backdrop_path": "/euYIwmwkmz95mnXvufEmbL6ovhZ.jpg",
+        "genre_ids": "[28, 12, 18]",
+        "id": 558449,
+        "original_language": "en",
+        "original_title": "Gladiator II",
+        "overview": "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people.",
+        "popularity": 4782.551,
+        "poster_path": "/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+        "release_date": "2024-11-05",
+        "title": "Gladiator II",
+        "video": false,
+        "vote_average": 6.758,
+        "vote_count": 1976
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/2C4js9DGb3GzoZeef1ZzhSGLXRO.jpg",
+        "genre_ids": "[10749, 18]",
+        "id": 1156593,
+        "original_language": "es",
+        "original_title": "Culpa tuya",
+        "overview": "The love between Noah and Nick seems unwavering despite their parents' attempts to separate them. But his job and her entry into college open up their lives to new relationships that will shake the foundations of both their relationship and the Leister family itself.",
+        "popularity": 4279.149,
+        "poster_path": "/1sQA7lfcF9yUyoLYC0e6Zo3jmxE.jpg",
+        "release_date": "2024-12-26",
+        "title": "Your Fault",
+        "video": false,
+        "vote_average": 7.107,
+        "vote_count": 640
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/zOpe0eHsq0A2NvNyBbtT6sj53qV.jpg",
+        "genre_ids": "[28, 878, 35, 10751]",
+        "id": 939243,
+        "original_language": "en",
+        "original_title": "Sonic the Hedgehog 3",
+        "overview": "Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+        "popularity": 3313.566,
+        "poster_path": "/d8Ryb8AunYAuycVKDp5HpdWPKgC.jpg",
+        "release_date": "2024-12-19",
+        "title": "Sonic the Hedgehog 3",
+        "video": false,
+        "vote_average": 7.659,
+        "vote_count": 324
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/cjEcqdRdPQJhYre3HUAc5538Gk8.jpg",
+        "genre_ids": "[28, 14, 35]",
+        "id": 845781,
+        "original_language": "en",
+        "original_title": "Red One",
+        "overview": "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas.",
+        "popularity": 3229.196,
+        "poster_path": "/cdqLnri3NEGcmfnqwk2TSIYtddg.jpg",
+        "release_date": "2024-10-31",
+        "title": "Red One",
+        "video": false,
+        "vote_average": 7.035,
+        "vote_count": 1807
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/3sh2UA2Q2l7fihgoj1LhFFPTlIM.jpg",
+        "genre_ids": "[28, 878, 12, 53]",
+        "id": 912649,
+        "original_language": "en",
+        "original_title": "Venom: The Last Dance",
+        "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+        "popularity": 3124.993,
+        "poster_path": "/aosm8NMQ3UyoBVpSxyimorCQykC.jpg",
+        "release_date": "2024-10-22",
+        "title": "Venom: The Last Dance",
+        "video": false,
+        "vote_average": 6.797,
+        "vote_count": 2122
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/A6vAMO3myroRfBwSZetY4GVqaW4.jpg",
+        "genre_ids": "[16, 14, 28, 12]",
+        "id": 839033,
+        "original_language": "en",
+        "original_title": "The Lord of the Rings: The War of the Rohirrim",
+        "overview": "183 years before the events chronicled in the original trilogy, a sudden attack by Wulf, a clever and ruthless Dunlending lord seeking vengeance for the death of his father, forces Helm Hammerhand and his people to make a daring last stand in the ancient stronghold of the Hornburg. Finding herself in an increasingly desperate situation, Héra, the daughter of Helm, must summon the will to lead the resistance against a deadly enemy intent on their total destruction.",
+        "popularity": 3009.106,
+        "poster_path": "/hE9SAMyMSUGAPsHUGdyl6irv11v.jpg",
+        "release_date": "2024-12-05",
+        "title": "The Lord of the Rings: The War of the Rohirrim",
+        "video": false,
+        "vote_average": 6.8,
+        "vote_count": 205
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/uKb22E0nlzr914bA9KyA5CVCOlV.jpg",
+        "genre_ids": "[18, 10749, 14]",
+        "id": 402431,
+        "original_language": "en",
+        "original_title": "Wicked",
+        "overview": "In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+        "popularity": 2943.848,
+        "poster_path": "/dfdvUzj4nLZpZ37BoefqvevCMI1.jpg",
+        "release_date": "2024-11-20",
+        "title": "Wicked",
+        "video": false,
+        "vote_average": 7.372,
+        "vote_count": 964
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/oHPoF0Gzu8xwK4CtdXDaWdcuZxZ.jpg",
+        "genre_ids": "[12, 10751, 16]",
+        "id": 762509,
+        "original_language": "en",
+        "original_title": "Mufasa: The Lion King",
+        "overview": "Mufasa, a cub lost and alone, meets a sympathetic lion named Taka, the heir to a royal bloodline. The chance meeting sets in motion an expansive journey of a group of misfits searching for their destiny.",
+        "popularity": 2704.585,
+        "poster_path": "/nHhjqeJcaQKOBCd21c1kV2DK5gm.jpg",
+        "release_date": "2024-12-18",
+        "title": "Mufasa: The Lion King",
+        "video": false,
+        "vote_average": 7.409,
+        "vote_count": 429
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/tElnmtQ6yz1PjN1kePNl8yMSb59.jpg",
+        "genre_ids": "[16, 12, 10751, 35]",
+        "id": 1241982,
+        "original_language": "en",
+        "original_title": "Moana 2",
+        "overview": "After receiving an unexpected call from her wayfinding ancestors, Moana journeys alongside Maui and a new crew to the far seas of Oceania and into dangerous, long-lost waters for an adventure unlike anything she's ever faced.",
+        "popularity": 2540.729,
+        "poster_path": "/m0SbwFNCa9epW1X60deLqTHiP7x.jpg",
+        "release_date": "2024-11-21",
+        "title": "Moana 2",
+        "video": false,
+        "vote_average": 7,
+        "vote_count": 743
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/fzjH7kt1017R9EckLDmWmH5pGhD.jpg",
+        "genre_ids": "[28, 27, 53]",
+        "id": 970450,
+        "original_language": "en",
+        "original_title": "Werewolves",
+        "overview": "A year after a supermoon’s light activated a dormant gene, transforming humans into bloodthirsty werewolves and causing nearly a billion deaths, the nightmare resurfaces as the supermoon rises again. Two scientists attempt to stop the mutation but fail, leaving those exposed to the moonlight to once again become feral werewolves. Chaos engulfs the streets as the scientists struggle to reach one of their family homes, now under siege by the savage creatures.",
+        "popularity": 2037.42,
+        "poster_path": "/elKf8Y5yi6Rl6teKsrQg0GAwaQD.jpg",
+        "release_date": "2024-12-04",
+        "title": "Werewolves",
+        "video": false,
+        "vote_average": 5.885,
+        "vote_count": 91
+      }
+    ]
+  }
 }
