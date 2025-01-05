@@ -1,0 +1,50 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-69bfb9e86bf9c26dd04d3936a2f05dc1"},
+  "mark": {"type": "arc"},
+  "encoding": {
+    "color": {"field": "Genre", "title": "Genre", "type": "nominal"},
+    "theta": {"field": "Count", "title": "Count", "type": "quantitative"},
+    "tooltip": [
+      {"field": "Genre", "title": "Genre", "type": "nominal"},
+      {"field": "Count", "title": "Count", "type": "quantitative"},
+      {
+        "field": "Percentage",
+        "format": ".1f",
+        "title": "Percentage",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "height": 400,
+  "title": "Genre Distribution of Movies",
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-69bfb9e86bf9c26dd04d3936a2f05dc1": [
+      {"Genre": "Action", "Count": 381, "Percentage": 13.719841555635579},
+      {"Genre": "Drama", "Count": 312, "Percentage": 11.235145840835434},
+      {"Genre": "Comedy", "Count": 280, "Percentage": 10.082823190493338},
+      {"Genre": "Adventure", "Count": 275, "Percentage": 9.902772776377386},
+      {"Genre": "Thriller", "Count": 258, "Percentage": 9.290601368383147},
+      {"Genre": "Animation", "Count": 179, "Percentage": 6.445804825351098},
+      {
+        "Genre": "Science Fiction",
+        "Count": 177,
+        "Percentage": 6.373784659704718
+      },
+      {"Genre": "Fantasy", "Count": 173, "Percentage": 6.229744328411956},
+      {"Genre": "Family", "Count": 168, "Percentage": 6.049693914296003},
+      {"Genre": "Horror", "Count": 158, "Percentage": 5.6895930860640975},
+      {"Genre": "Romance", "Count": 154, "Percentage": 5.545552754771336},
+      {"Genre": "Crime", "Count": 112, "Percentage": 4.033129276197335},
+      {"Genre": "Mystery", "Count": 54, "Percentage": 1.944544472452287},
+      {"Genre": "War", "Count": 29, "Percentage": 1.0442924018725244},
+      {"Genre": "History", "Count": 28, "Percentage": 1.0082823190493337},
+      {"Genre": "Music", "Count": 15, "Percentage": 0.5401512423478574},
+      {"Genre": "Documentary", "Count": 10, "Percentage": 0.3601008282319049},
+      {"Genre": "TV Movie", "Count": 7, "Percentage": 0.25207057976233344},
+      {"Genre": "Western", "Count": 7, "Percentage": 0.25207057976233344}
+    ]
+  }
+}
