@@ -1,0 +1,615 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "line": {"size": 3}
+  },
+  "data": {"name": "data-9d717a6c08a40ccfd16d9a843bd1314a"},
+  "mark": {"type": "line", "point": {"size": 80}},
+  "encoding": {
+    "color": {
+      "field": "genre_name",
+      "scale": {
+        "domain": [
+          "Action",
+          "Adventure",
+          "Science Fiction",
+          "Thriller",
+          "Animation"
+        ],
+        "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"]
+      },
+      "title": "Genre",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {"field": "release_year", "title": "Release Year", "type": "ordinal"},
+      {
+        "field": "popularity",
+        "format": ".2f",
+        "title": "Average Popularity",
+        "type": "quantitative"
+      },
+      {"field": "genre_name", "title": "Genre", "type": "nominal"}
+    ],
+    "x": {"field": "release_year", "title": "Release Year", "type": "ordinal"},
+    "y": {
+      "field": "popularity",
+      "title": "Average Popularity",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "params": [
+    {
+      "name": "GenreSelector",
+      "select": {"type": "point", "fields": ["genre_name"]},
+      "bind": {
+        "input": "select",
+        "options": [
+          "Action",
+          "Adventure",
+          "Science Fiction",
+          "Thriller",
+          "Animation"
+        ],
+        "name": "Select Genre:"
+      }
+    },
+    {
+      "name": "param_12",
+      "bind": {
+        "input": "range",
+        "max": 2024,
+        "min": 1990,
+        "name": "Start Year:",
+        "step": 1
+      },
+      "value": 1990
+    },
+    {
+      "name": "param_13",
+      "bind": {
+        "input": "range",
+        "max": 2024,
+        "min": 1990,
+        "name": "End Year:",
+        "step": 1
+      },
+      "value": 2024
+    }
+  ],
+  "title": "Popularity Trends of Top 5 Genres by Release Year",
+  "transform": [
+    {"filter": {"param": "GenreSelector"}},
+    {
+      "filter": "((datum.release_year >= param_12) && (datum.release_year <= param_13))"
+    }
+  ],
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-9d717a6c08a40ccfd16d9a843bd1314a": [
+      {"release_year": 1990, "genre_name": "Action", "popularity": 65.625},
+      {"release_year": 1990, "genre_name": "Animation", "popularity": 65.625},
+      {
+        "release_year": 1990,
+        "genre_name": "Science Fiction",
+        "popularity": 65.625
+      },
+      {"release_year": 1990, "genre_name": "Thriller", "popularity": 72.126},
+      {"release_year": 1991, "genre_name": "Action", "popularity": 73.573},
+      {"release_year": 1991, "genre_name": "Animation", "popularity": 83.416},
+      {
+        "release_year": 1991,
+        "genre_name": "Science Fiction",
+        "popularity": 73.573
+      },
+      {"release_year": 1991, "genre_name": "Thriller", "popularity": 73.573},
+      {"release_year": 1992, "genre_name": "Action", "popularity": 72.721},
+      {
+        "release_year": 1992,
+        "genre_name": "Adventure",
+        "popularity": 148.25650000000002
+      },
+      {"release_year": 1992, "genre_name": "Animation", "popularity": 68.0125},
+      {"release_year": 1992, "genre_name": "Thriller", "popularity": 86.422},
+      {"release_year": 1993, "genre_name": "Animation", "popularity": 67.537},
+      {"release_year": 1994, "genre_name": "Action", "popularity": 80.278},
+      {"release_year": 1994, "genre_name": "Animation", "popularity": 198.992},
+      {"release_year": 1994, "genre_name": "Thriller", "popularity": 93.633},
+      {"release_year": 1995, "genre_name": "Action", "popularity": 91.812},
+      {"release_year": 1995, "genre_name": "Adventure", "popularity": 126.871},
+      {
+        "release_year": 1995,
+        "genre_name": "Animation",
+        "popularity": 124.03299999999999
+      },
+      {"release_year": 1995, "genre_name": "Thriller", "popularity": 203.084},
+      {"release_year": 1997, "genre_name": "Action", "popularity": 61.757},
+      {"release_year": 1997, "genre_name": "Adventure", "popularity": 63.661},
+      {"release_year": 1997, "genre_name": "Animation", "popularity": 64.27},
+      {
+        "release_year": 1997,
+        "genre_name": "Science Fiction",
+        "popularity": 61.757
+      },
+      {"release_year": 1998, "genre_name": "Action", "popularity": 96.5715},
+      {
+        "release_year": 1998,
+        "genre_name": "Adventure",
+        "popularity": 94.52566666666667
+      },
+      {
+        "release_year": 1998,
+        "genre_name": "Animation",
+        "popularity": 94.52566666666667
+      },
+      {"release_year": 1999, "genre_name": "Action", "popularity": 149.775},
+      {"release_year": 1999, "genre_name": "Adventure", "popularity": 65.281},
+      {"release_year": 1999, "genre_name": "Animation", "popularity": 85.165},
+      {
+        "release_year": 1999,
+        "genre_name": "Science Fiction",
+        "popularity": 149.775
+      },
+      {"release_year": 1999, "genre_name": "Thriller", "popularity": 71.566},
+      {"release_year": 2000, "genre_name": "Action", "popularity": 273.633},
+      {"release_year": 2000, "genre_name": "Adventure", "popularity": 185.2265},
+      {"release_year": 2000, "genre_name": "Animation", "popularity": 96.82},
+      {"release_year": 2001, "genre_name": "Action", "popularity": 128.8165},
+      {
+        "release_year": 2001,
+        "genre_name": "Adventure",
+        "popularity": 193.93066666666667
+      },
+      {"release_year": 2001, "genre_name": "Animation", "popularity": 124.408},
+      {
+        "release_year": 2002,
+        "genre_name": "Action",
+        "popularity": 154.40066666666667
+      },
+      {"release_year": 2002, "genre_name": "Adventure", "popularity": 142.4436},
+      {
+        "release_year": 2002,
+        "genre_name": "Animation",
+        "popularity": 80.70633333333333
+      },
+      {
+        "release_year": 2002,
+        "genre_name": "Science Fiction",
+        "popularity": 110.768
+      },
+      {"release_year": 2002, "genre_name": "Thriller", "popularity": 160.938},
+      {
+        "release_year": 2003,
+        "genre_name": "Action",
+        "popularity": 88.11899999999999
+      },
+      {"release_year": 2003, "genre_name": "Adventure", "popularity": 99.8315},
+      {"release_year": 2003, "genre_name": "Animation", "popularity": 100.825},
+      {
+        "release_year": 2003,
+        "genre_name": "Science Fiction",
+        "popularity": 63.222
+      },
+      {
+        "release_year": 2003,
+        "genre_name": "Thriller",
+        "popularity": 104.81033333333333
+      },
+      {
+        "release_year": 2004,
+        "genre_name": "Action",
+        "popularity": 74.38550000000001
+      },
+      {
+        "release_year": 2004,
+        "genre_name": "Adventure",
+        "popularity": 99.41285714285713
+      },
+      {
+        "release_year": 2004,
+        "genre_name": "Animation",
+        "popularity": 87.02216666666668
+      },
+      {
+        "release_year": 2004,
+        "genre_name": "Science Fiction",
+        "popularity": 79.831
+      },
+      {"release_year": 2005, "genre_name": "Action", "popularity": 64.898},
+      {
+        "release_year": 2005,
+        "genre_name": "Adventure",
+        "popularity": 126.27166666666666
+      },
+      {
+        "release_year": 2005,
+        "genre_name": "Animation",
+        "popularity": 85.31099999999999
+      },
+      {"release_year": 2006, "genre_name": "Action", "popularity": 85.469},
+      {
+        "release_year": 2006,
+        "genre_name": "Adventure",
+        "popularity": 77.98633333333333
+      },
+      {"release_year": 2006, "genre_name": "Animation", "popularity": 64.0395},
+      {
+        "release_year": 2006,
+        "genre_name": "Science Fiction",
+        "popularity": 69.986
+      },
+      {"release_year": 2007, "genre_name": "Action", "popularity": 85.7722},
+      {
+        "release_year": 2007,
+        "genre_name": "Adventure",
+        "popularity": 102.66383333333333
+      },
+      {
+        "release_year": 2007,
+        "genre_name": "Animation",
+        "popularity": 144.27339999999998
+      },
+      {
+        "release_year": 2007,
+        "genre_name": "Science Fiction",
+        "popularity": 98.797
+      },
+      {
+        "release_year": 2007,
+        "genre_name": "Thriller",
+        "popularity": 139.22766666666666
+      },
+      {"release_year": 2008, "genre_name": "Action", "popularity": 112.009},
+      {
+        "release_year": 2008,
+        "genre_name": "Adventure",
+        "popularity": 86.49833333333333
+      },
+      {"release_year": 2008, "genre_name": "Animation", "popularity": 88.606},
+      {
+        "release_year": 2008,
+        "genre_name": "Science Fiction",
+        "popularity": 94.56899999999999
+      },
+      {
+        "release_year": 2008,
+        "genre_name": "Thriller",
+        "popularity": 126.66300000000001
+      },
+      {
+        "release_year": 2009,
+        "genre_name": "Action",
+        "popularity": 80.68266666666666
+      },
+      {
+        "release_year": 2009,
+        "genre_name": "Adventure",
+        "popularity": 96.16033333333333
+      },
+      {"release_year": 2009, "genre_name": "Animation", "popularity": 132.0652},
+      {
+        "release_year": 2009,
+        "genre_name": "Science Fiction",
+        "popularity": 93.958
+      },
+      {
+        "release_year": 2009,
+        "genre_name": "Thriller",
+        "popularity": 140.43866666666665
+      },
+      {"release_year": 2010, "genre_name": "Action", "popularity": 91.318},
+      {
+        "release_year": 2010,
+        "genre_name": "Adventure",
+        "popularity": 100.72049999999999
+      },
+      {"release_year": 2010, "genre_name": "Animation", "popularity": 102.346},
+      {
+        "release_year": 2010,
+        "genre_name": "Science Fiction",
+        "popularity": 91.93666666666667
+      },
+      {"release_year": 2010, "genre_name": "Thriller", "popularity": 80.712},
+      {"release_year": 2011, "genre_name": "Action", "popularity": 82.306},
+      {"release_year": 2011, "genre_name": "Adventure", "popularity": 91.652},
+      {"release_year": 2011, "genre_name": "Animation", "popularity": 72.23625},
+      {
+        "release_year": 2011,
+        "genre_name": "Science Fiction",
+        "popularity": 72.122
+      },
+      {"release_year": 2011, "genre_name": "Thriller", "popularity": 50.681},
+      {
+        "release_year": 2012,
+        "genre_name": "Action",
+        "popularity": 103.35940000000001
+      },
+      {
+        "release_year": 2012,
+        "genre_name": "Adventure",
+        "popularity": 93.118125
+      },
+      {"release_year": 2012, "genre_name": "Animation", "popularity": 73.0824},
+      {
+        "release_year": 2012,
+        "genre_name": "Science Fiction",
+        "popularity": 105.96566666666666
+      },
+      {
+        "release_year": 2012,
+        "genre_name": "Thriller",
+        "popularity": 68.03466666666667
+      },
+      {
+        "release_year": 2013,
+        "genre_name": "Action",
+        "popularity": 73.29683333333334
+      },
+      {
+        "release_year": 2013,
+        "genre_name": "Adventure",
+        "popularity": 77.51633333333334
+      },
+      {"release_year": 2013, "genre_name": "Animation", "popularity": 98.804},
+      {
+        "release_year": 2013,
+        "genre_name": "Science Fiction",
+        "popularity": 75.83075
+      },
+      {"release_year": 2013, "genre_name": "Thriller", "popularity": 88.355},
+      {
+        "release_year": 2014,
+        "genre_name": "Action",
+        "popularity": 95.28622222222222
+      },
+      {
+        "release_year": 2014,
+        "genre_name": "Adventure",
+        "popularity": 109.09454545454545
+      },
+      {"release_year": 2014, "genre_name": "Animation", "popularity": 90.763},
+      {
+        "release_year": 2014,
+        "genre_name": "Science Fiction",
+        "popularity": 107.95844444444444
+      },
+      {
+        "release_year": 2014,
+        "genre_name": "Thriller",
+        "popularity": 96.48177777777778
+      },
+      {"release_year": 2015, "genre_name": "Action", "popularity": 73.356},
+      {
+        "release_year": 2015,
+        "genre_name": "Adventure",
+        "popularity": 82.45822222222222
+      },
+      {
+        "release_year": 2015,
+        "genre_name": "Animation",
+        "popularity": 92.17666666666668
+      },
+      {
+        "release_year": 2015,
+        "genre_name": "Science Fiction",
+        "popularity": 76.30566666666667
+      },
+      {"release_year": 2015, "genre_name": "Thriller", "popularity": 89.00475},
+      {"release_year": 2016, "genre_name": "Action", "popularity": 89.26625},
+      {
+        "release_year": 2016,
+        "genre_name": "Adventure",
+        "popularity": 84.899625
+      },
+      {
+        "release_year": 2016,
+        "genre_name": "Animation",
+        "popularity": 82.21233333333333
+      },
+      {
+        "release_year": 2016,
+        "genre_name": "Science Fiction",
+        "popularity": 79.273
+      },
+      {
+        "release_year": 2016,
+        "genre_name": "Thriller",
+        "popularity": 106.03733333333334
+      },
+      {
+        "release_year": 2017,
+        "genre_name": "Action",
+        "popularity": 76.06564285714286
+      },
+      {
+        "release_year": 2017,
+        "genre_name": "Adventure",
+        "popularity": 78.72738461538462
+      },
+      {"release_year": 2017, "genre_name": "Animation", "popularity": 109.8595},
+      {
+        "release_year": 2017,
+        "genre_name": "Science Fiction",
+        "popularity": 81.52155555555555
+      },
+      {
+        "release_year": 2017,
+        "genre_name": "Thriller",
+        "popularity": 73.05866666666667
+      },
+      {
+        "release_year": 2018,
+        "genre_name": "Action",
+        "popularity": 101.24884615384615
+      },
+      {
+        "release_year": 2018,
+        "genre_name": "Adventure",
+        "popularity": 96.796125
+      },
+      {"release_year": 2018, "genre_name": "Animation", "popularity": 106.377},
+      {
+        "release_year": 2018,
+        "genre_name": "Science Fiction",
+        "popularity": 113.1241111111111
+      },
+      {
+        "release_year": 2018,
+        "genre_name": "Thriller",
+        "popularity": 88.75366666666667
+      },
+      {
+        "release_year": 2019,
+        "genre_name": "Action",
+        "popularity": 78.90963636363637
+      },
+      {
+        "release_year": 2019,
+        "genre_name": "Adventure",
+        "popularity": 108.88027272727273
+      },
+      {"release_year": 2019, "genre_name": "Animation", "popularity": 125.404},
+      {
+        "release_year": 2019,
+        "genre_name": "Science Fiction",
+        "popularity": 81.51480000000001
+      },
+      {
+        "release_year": 2019,
+        "genre_name": "Thriller",
+        "popularity": 76.63072727272727
+      },
+      {
+        "release_year": 2020,
+        "genre_name": "Action",
+        "popularity": 112.69283333333334
+      },
+      {"release_year": 2020, "genre_name": "Adventure", "popularity": 58.747},
+      {
+        "release_year": 2020,
+        "genre_name": "Animation",
+        "popularity": 91.30850000000001
+      },
+      {
+        "release_year": 2020,
+        "genre_name": "Science Fiction",
+        "popularity": 184.723
+      },
+      {"release_year": 2020, "genre_name": "Thriller", "popularity": 75.67525},
+      {
+        "release_year": 2021,
+        "genre_name": "Action",
+        "popularity": 99.51599999999999
+      },
+      {
+        "release_year": 2021,
+        "genre_name": "Adventure",
+        "popularity": 102.5739411764706
+      },
+      {
+        "release_year": 2021,
+        "genre_name": "Animation",
+        "popularity": 86.75371428571428
+      },
+      {
+        "release_year": 2021,
+        "genre_name": "Science Fiction",
+        "popularity": 112.28219999999999
+      },
+      {"release_year": 2021, "genre_name": "Thriller", "popularity": 92.641375},
+      {
+        "release_year": 2022,
+        "genre_name": "Action",
+        "popularity": 116.40408333333333
+      },
+      {
+        "release_year": 2022,
+        "genre_name": "Adventure",
+        "popularity": 116.50995238095237
+      },
+      {
+        "release_year": 2022,
+        "genre_name": "Animation",
+        "popularity": 96.02554545454545
+      },
+      {
+        "release_year": 2022,
+        "genre_name": "Science Fiction",
+        "popularity": 92.2145
+      },
+      {
+        "release_year": 2022,
+        "genre_name": "Thriller",
+        "popularity": 104.12053846153846
+      },
+      {
+        "release_year": 2023,
+        "genre_name": "Action",
+        "popularity": 110.4107358490566
+      },
+      {
+        "release_year": 2023,
+        "genre_name": "Adventure",
+        "popularity": 106.68597058823529
+      },
+      {
+        "release_year": 2023,
+        "genre_name": "Animation",
+        "popularity": 110.16099999999999
+      },
+      {
+        "release_year": 2023,
+        "genre_name": "Science Fiction",
+        "popularity": 111.50216666666667
+      },
+      {
+        "release_year": 2023,
+        "genre_name": "Thriller",
+        "popularity": 113.87512000000001
+      },
+      {
+        "release_year": 2024,
+        "genre_name": "Action",
+        "popularity": 406.14959541984734
+      },
+      {
+        "release_year": 2024,
+        "genre_name": "Adventure",
+        "popularity": 587.1790612244898
+      },
+      {
+        "release_year": 2024,
+        "genre_name": "Animation",
+        "popularity": 418.58697826086956
+      },
+      {
+        "release_year": 2024,
+        "genre_name": "Science Fiction",
+        "popularity": 439.43871739130435
+      },
+      {
+        "release_year": 2024,
+        "genre_name": "Thriller",
+        "popularity": 291.98916949152544
+      },
+      {"release_year": 2025, "genre_name": "Action", "popularity": 83.072},
+      {"release_year": 2025, "genre_name": "Adventure", "popularity": 82.58825},
+      {
+        "release_year": 2025,
+        "genre_name": "Science Fiction",
+        "popularity": 74.75675
+      },
+      {"release_year": 2025, "genre_name": "Thriller", "popularity": 71.5515},
+      {"release_year": 2026, "genre_name": "Action", "popularity": 100.254},
+      {"release_year": 2026, "genre_name": "Adventure", "popularity": 312.858},
+      {
+        "release_year": 2026,
+        "genre_name": "Science Fiction",
+        "popularity": 77.051
+      },
+      {"release_year": 2026, "genre_name": "Thriller", "popularity": 100.254}
+    ]
+  }
+}
