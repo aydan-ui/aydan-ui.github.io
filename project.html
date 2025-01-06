@@ -102,10 +102,19 @@
         <p>What drives audience preferences, and how have movie ratings evolved across genres over time? For making data-driven decisions, it is essential for the companies in the entertainment industry to understand the movie ratings and audience preferences. This analysis, conducted based on the dataset about popular movies from TMDb, delves into key indicators including movie vote averages, genres, release years. This study can be helpful for producers, marketers and movie platforms in shaping their content strategies. Nowadays, the companies including Disney+ and Netflix are rising in popularity. Therefore, analysing genre-specific trends in movie industry can be beneficial to reveal genres performing high consistently, preferences of audience and crucial shifts in ratings for these type of companies in terms of improving the quality of streaming services. </p>
     </section>
 
-    <section id="data">
-        <h2>Data</h2>
-        <p>The analysis is conducted based on open API from TMDb. It is a comprehensive dataset that has key variables like vote averages, release dates, genres and popularity scores. The data covers multiple decades which is very beneficial for getting a comprehensive view to audience preferences throughout provided timeframe.</p>
-    </section>
+   <section id="data">
+    <h2>Data</h2>
+    <p>This analysis is implemented based on two main datasets which offer a comprehensive view of audience preferences and trends in the movie industry:</p>
+    <p>
+        1. <strong>TMDb API Dataset:</strong>  
+        I accessed this dataset via TMDb API. It is a highly reliable source for getting data about movies. Dataset contains important metrics related to key variables such as vote averages, popularity scores, genres, release dates etc. The data covers multiple decades that allows extensive view on audience preferences. With the help of this dataset, I could visualize the trends in movie industry based on key variables. API ensures the real-time updates as well. Therefore, it was beneficial in terms of analysing the current trends as well. 
+    </p>
+    <p>
+        2. <strong>Wikipedia Dataset for Academy Awards and Genres:</strong>  
+        I used this data by employing the web scraping tools to get the data from Wikipedia. The dataset includes information about the Academy Awards for Best International Feature Film and its winners. Then I merged this data with the one from API to understand what is the share of genres among the award winners. 
+    </p>
+</section>
+
 
     <section id="visualizations">
         <h2>Visualizations</h2>
@@ -116,7 +125,7 @@
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                 This bar graph illustrates the top 10 most popular movies based on their popularity scores. "Gladiator II" and "Your Fault" score the most with viewers, whilst "Elevation" is the least one in this list. 
             </p>
-            <p> I used Python's "requests" library to fetch data from an API, and it was followed by data cleaning with pandas </p>
+            <p> I used Python's "requests" library to fetch data from an API, and it was followed by data cleaning with pandas. </p>
 
         </div>
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
@@ -192,7 +201,7 @@
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                This pie chart demonstrates that the movie genres like Drama, Action, and Comedy have higher shares in the industry which means they appeal to the wider audience. However, there are some genres like Documentary and Western that they appealing to the niche audience in contrast. The existing polarity is a great opportunity for content creators to try underrepresented genres and attract the relevant audiences.  
             </p>
-           <p> I visualized the interactive chart by using "plotly"</p>
+           <p> I visualized the interactive chart by using "plotly".</p>
         </div>
         <figure id="Location3"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
        
@@ -266,7 +275,7 @@
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
                The "Adventure" genre is highlighted in orange for emphasising its dominant position being highest-voted one. "Science Fiction" and "Fantasy" are also popular genres recording above-average vote counts. In contrast, the less popular genres are "Horror" and "Romance". The first bar chart in this project indicated some romantic movies were among the most popular ones. One could assume it points about the success of genre as well. However, with this visualisation we can observe that a couple successful movies do not necessarily imply that overall performance of the genre is also high.    
             </p>
-             <p> I reshaped and transformed data using "pandas" library </p>
+             <p> I reshaped and transformed data using "pandas" library. </p>
 
         </div>
         <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
@@ -417,7 +426,7 @@
    
     <section id="conclusion">
         <h2>Conclusion</h2>
-        <p>The analysis highlights key insights into ... Recommendations include ...</p>
+        <p>This analysis reveals key insights into movie trends. It shows that popular movies are not always the ones with high rating as there can be other factors that impact it including marketing and star power which needs further research. The genres like Drama, Action and Comedy are dominating in the market whilst Documentary applies for niche audiences. Recommendations: Based on the analysis, it can be recommended that streaming companies should shape their contents by considering underrepresented genres. The analysis can be a foundation for the further research, such as exploring viewer demographics, understanding the impact of streaming platforms on voting rates, understanding what affects the award winning tendency or analysing the role of social media in driving movie popularity.</p>
     </section>
     
   
