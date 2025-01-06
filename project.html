@@ -325,6 +325,42 @@
         </div>
         <!-- Button integration ends here -->
     </section>
+
+       <section>
+        <div class="chart-description">
+            <h3>Chart 7 | Countries with Academy Awards for the Best International Feature Film</h3>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               This heatmap illustrates how many movies were released over the past three decades. The data is grouped by months and 5-year intervals. Higher number of movie releases are marked with darker shades of blue. The map shows that June-July is a peak period most probably because of summer holidays and more available time for audience to watch movies. December is also noted with the higher activity which can be explained by the holiday blockbusters. We can see the heat increasing in post-2010 period which can be associated with rising streaming platforms and lower production costs year by year. The technological advancements drives a sharp increase in movie production as we can see post 2000 period is marked with more movie releases.  
+            </p>
+        </div>
+        <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+       
+         <!-- Button integration starts here -->
+        <div id="colab-notebook" style="text-align: center; margin-top: 20px;">
+            <p style="font-size: 1.1rem; color: #444; margin-bottom: 15px;">
+                View my Google Colab notebook with data visualization workflows and Python code:
+            </p>
+            <a href="https://colab.research.google.com/drive/1kbhg6mizJmmPQmVzErIfnFvMUUUjdIis?usp=sharing">
+                <button id="colab-button" style="
+                    background-color: #005f73; 
+                    border: none;
+                    color: white;
+                    padding: 12px 20px; 
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    border-radius: 8px; 
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.2s ease; 
+                " onmouseover="this.style.backgroundColor='#0a9396'; this.style.transform='scale(1.05)';" 
+                   onmouseout="this.style.backgroundColor='#005f73'; this.style.transform='scale(1)';">
+                    Open Colab Notebook
+                </button>
+            </a>
+        </div>
+        <!-- Button integration ends here -->
+    </section>
        
     <section id="conclusion">
         <h2>Conclusion</h2>
@@ -340,6 +376,7 @@
         let figure_4_spec = "project_interactive_4.json"
         let figure_5_spec = "project_chart_5.json"
         let figure_6_spec = "project_heatmap_6.json"
+        let figure_7_spec = "project_map_7.json"
        
         vegaEmbed ('#Location1', figure_1_spec) 
         vegaEmbed ('#Location2', figure_2_spec)
@@ -347,6 +384,7 @@
         vegaEmbed ('#Location4', figure_4_spec)
         vegaEmbed ('#Location5', figure_5_spec)
         vegaEmbed ('#Location6', figure_6_spec)
+        vegaEmbed ('#Location7', figure_7_spec)
        
     </script>
    
