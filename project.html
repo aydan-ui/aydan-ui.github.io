@@ -371,7 +371,42 @@
         </div>
         <!-- Button integration ends here -->
     </section>
+
+    <section>
+        <div class="chart-description">
+            <h3>Chart 8 | Most Common Genres in Award-Winning Films by Country</h3>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+               I wanted to analyse if the previous analysis like genre distribution and vote ranking are applicable to the most award-winning genres as well. As we can observe, Drama genre is both award-winning and has more shares. However, it has below average votes compared to others.  Similarly, the genres Animation, Romance and Comedy are marked with below average votes despite being most award-winning genres in top 3 countries. In addition, the shares of Animation and Romance genres in movie industry are not as high as Comedy and Drama. Thus, it seems the vote ranking and shares are not correlated with awards. It seems the cultural storytelling traditions affect the prioritizing in award distribution as well.   
+            </p>
+        </div>
+        <figure id="Location7"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
        
+         <!-- Button integration starts here -->
+        <div id="colab-notebook" style="text-align: center; margin-top: 20px;">
+            <p style="font-size: 1.1rem; color: #444; margin-bottom: 15px;">
+                View my Google Colab notebook with data visualization workflows and Python code:
+            </p>
+            <a href="https://colab.research.google.com/drive/1kbhg6mizJmmPQmVzErIfnFvMUUUjdIis?usp=sharing">
+                <button id="colab-button" style="
+                    background-color: #005f73; 
+                    border: none;
+                    color: white;
+                    padding: 12px 20px; 
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 16px;
+                    border-radius: 8px; 
+                    cursor: pointer;
+                    transition: background-color 0.3s ease, transform 0.2s ease; 
+                " onmouseover="this.style.backgroundColor='#0a9396'; this.style.transform='scale(1.05)';" 
+                   onmouseout="this.style.backgroundColor='#005f73'; this.style.transform='scale(1)';">
+                    Open Colab Notebook
+                </button>
+            </a>
+        </div>
+        <!-- Button integration ends here -->
+   
     <section id="conclusion">
         <h2>Conclusion</h2>
         <p>The analysis highlights key insights into ... Recommendations include ...</p>
@@ -386,6 +421,7 @@
         let figure_4_spec = "project_interactive_4.json"
         let figure_5_spec = "project_chart_5.json"
         let figure_6_spec = "project_heatmap_6.json"
+        let figure_7_spec = "project_chart_8.json"
        
         vegaEmbed ('#Location1', figure_1_spec) 
         vegaEmbed ('#Location2', figure_2_spec)
@@ -393,6 +429,7 @@
         vegaEmbed ('#Location4', figure_4_spec)
         vegaEmbed ('#Location5', figure_5_spec)
         vegaEmbed ('#Location6', figure_6_spec)
+        vegaEmbed ('#Location7', figure_7_spec)
 
        
     </script>
