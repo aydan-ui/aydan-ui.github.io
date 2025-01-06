@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+        "format": {
+            "type": "topojson",
+            "feature": "countries"
+        }
+    },
+    "mark": {
+        "type": "geoshape",
+        "stroke": "black",
+        "strokeWidth": 0.5
+    },
+    "encoding": {
+        "color": {
+            "field": "Awards",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "viridis"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Country",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "id",
+                "type": "nominal",
+                "title": "ID"
+            },
+            {
+                "field": "Awards",
+                "type": "quantitative",
+                "title": "Awards"
+            }
+        ]
+    },
+    "transform": [
+        {
+            "lookup": "id",
+            "from": {
+                "data": {
+                    "values": [
+                        {
+                            "id": "ITA",
+                            "Country": "Italy",
+                            "Awards": 14
+                        },
+                        {
+                            "id": "FRA",
+                            "Country": "France",
+                            "Awards": 12
+                        },
+                        {
+                            "id": "JPN",
+                            "Country": "Japan",
+                            "Awards": 5
+                        },
+                        {
+                            "id": "DZA",
+                            "Country": "Algeria",
+                            "Awards": 1
+                        },
+                        {
+                            "id": "USA",
+                            "Country": "United States",
+                            "Awards": 1
+                        }
+                    ]
+                },
+                "key": "id",
+                "fields": [
+                    "Country",
+                    "Awards"
+                ]
+            }
+        }
+    ],
+    "projection": {
+        "type": "equirectangular"
+    },
+    "title": "Countries with Academy Awards for Best International Feature Film",
+    "width": 800,
+    "height": 400
+}
