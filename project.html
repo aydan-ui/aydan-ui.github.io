@@ -337,7 +337,7 @@
     <div id="plotly-map" style="width:100%;height:500px;"></div>
 
     <script>
-        fetch("academy_awards_map-2.json")
+        fetch("academy_awards_map_updated.json")
             .then(response => response.json())
             .then(fig => {
                 Plotly.newPlot('plotly-map', fig.data, fig.layout);
