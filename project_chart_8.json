@@ -1,0 +1,42 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-3b900a4483248ee07a14dde894db6927"},
+  "mark": {"type": "bar", "size": 70},
+  "encoding": {
+    "color": {
+      "field": "Genre",
+      "legend": {"title": "Genre"},
+      "scale": {
+        "domain": ["Drama", "Comedy", "Romance", "Animation"],
+        "range": ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728"]
+      },
+      "type": "nominal"
+    },
+    "tooltip": [
+      {"field": "Country", "type": "nominal"},
+      {"field": "Genre", "type": "nominal"},
+      {"field": "Count", "type": "quantitative"}
+    ],
+    "x": {"field": "Count", "title": "Number of Films", "type": "quantitative"},
+    "y": {
+      "field": "Country",
+      "sort": {"field": "Count", "order": "descending"},
+      "title": "Country",
+      "type": "nominal"
+    }
+  },
+  "height": 400,
+  "title": "Most Common Genres in Award-Winning Films by Country",
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-3b900a4483248ee07a14dde894db6927": [
+      {"Country": "France", "Genre": "Drama", "Count": 10},
+      {"Country": "France", "Genre": "Comedy", "Count": 5},
+      {"Country": "Italy", "Genre": "Drama", "Count": 12},
+      {"Country": "Italy", "Genre": "Romance", "Count": 4},
+      {"Country": "Japan", "Genre": "Animation", "Count": 8},
+      {"Country": "Japan", "Genre": "Drama", "Count": 6}
+    ]
+  }
+}
