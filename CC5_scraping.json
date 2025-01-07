@@ -1,0 +1,104 @@
+{
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-2ca7c9ee275168330dcaaceb25b90288"},
+  "mark": {"type": "bar", "size": 25},
+  "encoding": {
+    "color": {
+      "field": "Value",
+      "legend": null,
+      "scale": {"scheme": "blues"},
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {"field": "Rank", "type": "quantitative"},
+      {"field": "Country or Region", "type": "nominal"},
+      {"field": "Value", "type": "quantitative"}
+    ],
+    "x": {
+      "axis": {"tickCount": 8, "tickMinStep": 1},
+      "field": "Value",
+      "title": "Life Evaluation Score",
+      "type": "quantitative"
+    },
+    "y": {
+      "axis": {"title": null},
+      "field": "Country or Region",
+      "sort": "-x",
+      "type": "nominal"
+    }
+  },
+  "height": 350,
+  "title": {
+    "text": "The Happiest Countries in the World",
+    "subtitle": "World Happiness Report 2024: Top 10 Life Evaluation Scores",
+    "fontSize": 20,
+    "subtitleFontSize": 14,
+    "anchor": "start"
+  },
+  "width": 500,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-2ca7c9ee275168330dcaaceb25b90288": [
+      {
+        "Rank": 1,
+        "Country or Region": "Lithuania",
+        "Metric": "Life Evaluation",
+        "Value": 7.795
+      },
+      {
+        "Rank": 2,
+        "Country or Region": "Israel",
+        "Metric": "Life Evaluation",
+        "Value": 7.667
+      },
+      {
+        "Rank": 3,
+        "Country or Region": "Iceland",
+        "Metric": "Life Evaluation",
+        "Value": 7.658
+      },
+      {
+        "Rank": 4,
+        "Country or Region": "Serbia",
+        "Metric": "Life Evaluation",
+        "Value": 7.658
+      },
+      {
+        "Rank": 5,
+        "Country or Region": "Denmark",
+        "Metric": "Life Evaluation",
+        "Value": 7.598
+      },
+      {
+        "Rank": 6,
+        "Country or Region": "Luxembourg",
+        "Metric": "Life Evaluation",
+        "Value": 7.301
+      },
+      {
+        "Rank": 7,
+        "Country or Region": "Finland",
+        "Metric": "Life Evaluation",
+        "Value": 7.319
+      },
+      {
+        "Rank": 8,
+        "Country or Region": "Romania",
+        "Metric": "Life Evaluation",
+        "Value": 7.302
+      },
+      {
+        "Rank": 9,
+        "Country or Region": "Netherlands",
+        "Metric": "Life Evaluation",
+        "Value": 7.122
+      },
+      {
+        "Rank": 10,
+        "Country or Region": "Czechia",
+        "Metric": "Life Evaluation",
+        "Value": 7.06
+      }
+    ]
+  }
+}
