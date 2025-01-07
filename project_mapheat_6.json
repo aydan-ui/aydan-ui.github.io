@@ -50,7 +50,7 @@
     }
   },
   "height": 400,
-  "title": "Most popular movies released recently",
+  "title": "Most popular movies released over the past three decades",
   "width": 600,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
   "datasets": {
