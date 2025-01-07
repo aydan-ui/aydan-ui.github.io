@@ -107,12 +107,14 @@
     <p>This analysis is implemented based on two main datasets which offer a comprehensive view of audience preferences and trends in the movie industry:</p>
     <p>
         1. <strong>TMDb API Dataset:</strong>  
-        I accessed this dataset via TMDb API. It is a highly reliable source for getting data about movies. Dataset contains important metrics related to key variables such as vote averages, popularity scores, genres, release dates etc. The data covers multiple decades that allows extensive view on audience preferences. With the help of this dataset, I could visualize the trends in movie industry based on key variables. API ensures the real-time updates as well. Therefore, it was beneficial in terms of analysing the current trends as well. 
+        I accessed this dataset via TMDb API. It is a highly reliable source for getting data about movies. Dataset contains important metrics related to key variables such as vote averages, popularity scores, genres, release dates etc. The data covers multiple decades that allows extensive view on audience preferences. With the help of this dataset, I could visualize the trends in movie industry based on key variables. API ensures the real-time updates as well. Therefore, it was beneficial in terms of analysing the current trends as well. I cleaned and prepared this dataset for the analysis utilising Pandas library. Also, for visualizing key trends I employed Altair. Loops were used to handle the large amounts of data. 
     </p>
     <p>
         2. <strong>Wikipedia Dataset for Academy Awards and Genres:</strong>  
-        I used this data by employing the web scraping tools to get the data from Wikipedia. The dataset includes information about the Academy Awards for Best International Feature Film and its winners. Then I merged this data with the one from API to understand what is the share of genres among the award winners. 
+        I used this data by employing the web scraping tool Beautiful Soup to get the data from Wikipedia. The dataset includes information about the Academy Awards for Best International Feature Film and its winners. Then I merged this data with the one from API to understand what is the share of genres among the award winners. In addition, I used GeoJson for mapping geographical patterns. 
     </p>
+
+      <p> </p>
 </section>
 
 
@@ -419,6 +421,11 @@
             </a>
         </div>
         <!-- Button integration ends here -->
+
+       <section id="challenges">
+        <h2>Challenges</h2>
+        <p>While working on the project, I faced with two main challenges. Firstly, the genres were IDs in API instead of human-readable names which was difficult to interpret. To tackle this, "genres_mapping" dictionary was manually created so that the genre names could be linked to the corresponding IDs. Secondly, the TMDb API had some limitations such as the number of movies being retrieved per request. It required pagination for larger datasets. To handle this issue, I implemented "loop" so that I can fetch multiple pages of data while balancing the usage limits of API and data requirements. This solution helped to get access to meaningful and structured data. </p>
+    </section>
    
     <section id="conclusion">
         <h2>Conclusion</h2>
