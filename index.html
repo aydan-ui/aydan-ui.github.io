@@ -239,13 +239,11 @@
 </head>
 <body>
     <h2>Section 6: Loops. Build a dashboard.</h2>
-<p>This section dynamically loads nine FRED charts using Vega-Lite specifications.</p>
-
-<section id="ons-json-charts">
-    <div id="charts-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        <!-- Chart placeholders will be dynamically created here -->
-    </div>
-</section>
+<p>This section illustrates 9 FRED charts </p>
+<section>
+        <figure id="Location19"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+    </section>
+    
 <section id="new-colab-button" style="text-align: center; margin: 30px 0;">
     <p style="font-size: 1.1rem; color: #444;">
         View additional data visualizations and workflows in my Colab notebook:
@@ -269,28 +267,6 @@
     </a>
 </section>
 </body>
-<style>
-    #charts-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        margin: 20px 0;
-    }
-
-    figure {
-        border: 1px solid #ddd;
-        padding: 10px;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        background-color: #f9f9f9;
-        text-align: center;
-    }
-
-    figcaption {
-        margin-top: 5px;
-        font-size: 0.9rem;
-        color: #444;
-    }
-</style>
 </head>
     
 <body>
@@ -633,6 +609,7 @@
         let figure_16_spec = "IRIS.json"
         let figure_17_spec = "inf_azerb.json"
         let figure_18_spec = "HeatMap_Commuting.json"
+        let figure_19_spec = "CC6_loops.json"
         
         // You should have a spec for a graph in this same folder. Just specify its name here, e.g. let figure_1_spec = "chart1.json"
 
@@ -661,6 +638,7 @@
         vegaEmbed ("#Location16", figure_16_spec).catch(console.error);
         vegaEmbed ("#Location17", figure_17_spec)
         vegaEmbed ("#Location18", figure_18_spec)
+        vegaEmbed ("#Location19", figure_19_spec)
     </script>
         
 <script>
