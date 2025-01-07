@@ -96,7 +96,7 @@
   "data": {"name": "data-537c765b1e79bbede637017497a2e296"},
   "height": 400,
   "title": {
-    "text": "Which Movie Genres Attract the Most Votes on IMDb?",
+    "text": "Which movie genres attract the most votes on IMDb?",
     "subtitle": "This chart shows the average vote count for movies in each genre. The red dashed line indicates the overall average.",
     "fontSize": 18,
     "subtitleFontSize": 14,
