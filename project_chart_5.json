@@ -77,7 +77,8 @@
           "field": "vote_count",
           "scale": {"domain": [0, 9732]},
           "title": "Average Vote Count",
-          "type": "quantitative"
+          "type": "quantitative",
+          "axis": {"titleAngle": 0, "titleAlign": "center", "titleY": -10}
         }
       }
     },
@@ -95,7 +96,7 @@
   "data": {"name": "data-537c765b1e79bbede637017497a2e296"},
   "height": 400,
   "title": {
-    "text": "Average Vote Count by Genre",
+    "text": "Which Movie Genres Attract the Most Votes on IMDb?",
     "subtitle": "This chart shows the average vote count for movies in each genre. The red dashed line indicates the overall average.",
     "fontSize": 18,
     "subtitleFontSize": 14,
