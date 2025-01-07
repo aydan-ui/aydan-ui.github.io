@@ -22,11 +22,12 @@
       "field": "Country",
       "sort": {"field": "Count", "order": "descending"},
       "title": "Country",
-      "type": "nominal"
+      "type": "nominal",
+      "axis": {"titleAngle": 0, "titleAlign": "center", "titleY": -10}
     }
   },
   "height": 400,
-  "title": "Most Common Genres in Award-Winning Films by Country",
+  "title": "What are the genres of award-winning films in top 3 countries?",
   "width": 600,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
   "datasets": {
