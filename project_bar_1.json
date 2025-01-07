@@ -1,0 +1,54 @@
+{
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axis": {"labelFontSize": 12, "titleFontSize": 14},
+    "title": {"anchor": "start", "fontSize": 16}
+  },
+  "data": {"name": "data-99ced40e640f00eb4c2ef3614ccb4877"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "color": {
+      "field": "count",
+      "legend": null,
+      "scale": {"scheme": "blues"},
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {"field": "genre_name", "title": "Genre", "type": "nominal"},
+      {
+        "field": "count",
+        "title": "Number of Appearances",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "axis": {"format": "d"},
+      "field": "count",
+      "title": "Number of Appearances in Top Movies",
+      "type": "quantitative"
+    },
+    "y": {"field": "genre_name", "sort": "-x", "title": null, "type": "nominal"}
+  },
+  "height": 400,
+  "title": {
+    "text": "What Are Top Genres of Top 10 Movies?",
+    "subtitle": "Source: TMDb"
+  },
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-99ced40e640f00eb4c2ef3614ccb4877": [
+      {"genre_ids": 28, "count": 6, "genre_name": "Action"},
+      {"genre_ids": 12, "count": 5, "genre_name": "Adventure"},
+      {"genre_ids": 14, "count": 3, "genre_name": "Fantasy"},
+      {"genre_ids": 16, "count": 3, "genre_name": "Animation"},
+      {"genre_ids": 18, "count": 3, "genre_name": "Drama"},
+      {"genre_ids": 35, "count": 3, "genre_name": "Comedy"},
+      {"genre_ids": 10751, "count": 3, "genre_name": "Family"},
+      {"genre_ids": 53, "count": 2, "genre_name": "Thriller"},
+      {"genre_ids": 878, "count": 2, "genre_name": "Science Fiction"},
+      {"genre_ids": 10749, "count": 2, "genre_name": "Romance"},
+      {"genre_ids": 27, "count": 1, "genre_name": "Horror"}
+    ]
+  }
+}
