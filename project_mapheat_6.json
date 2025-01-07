@@ -50,7 +50,7 @@
     }
   },
   "height": 400,
-  "title": "Movie Releases by Month and 5-Year Ranges",
+  "title": "Most popular movies released recently",
   "width": 600,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
   "datasets": {
