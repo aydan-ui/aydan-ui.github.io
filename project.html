@@ -121,12 +121,10 @@
         
     <section>
         <div class="chart-description">
-            <h3>Chart 1 | The Top Ten Most Popular Movies </h3>
+            <h3>Chart 1 | What Are Top Genres of Top 10 Movies? </h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                Let's take a glance at the top ten most popular movies first. "Gladiator II" and "Your Fault" score the most with viewers, whilst "Elevation" is the least one in this list. 
+                Let's look at the top genres based on top 10 movies. I fetched the data of popular movies from TMDb API, and parsed their genres. Afterwards, mapping genres with the names, I could get the most frequent genres based on their appearances in top movies list. The genres "Action" and "Adventure" are leading ones. This bar chart is a good background to see how genres are performing based on other key metrics. 
             </p>
-            <p> I used Python's "requests" library to fetch data from an API, and it was followed by data cleaning with pandas. </p>
-
         </div>
         <figure id="Location1"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
        
@@ -161,7 +159,7 @@
         <div class="chart-description">
             <h3>Chart 2 | Popularity vs Average Rating </h3>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-               This scatter plot depicts very interesting findings. Although it is very logical to conclude that higher-rated movies are also popular, the data counterfacts this assumption. High-rated movies mostly note relatively lower popularity score. Also, it can be observed that some very popular mocies are not so highly-rated. The movies popularity and ratings may not always coincide as perhaps the marketing budget, star power and many other factors can influence the outcomes. 
+               This scatter plot depicts very interesting findings. Although it is very logical to conclude that higher-rated movies are also popular, the data counterfacts this assumption. High-rated movies mostly note relatively lower popularity score. Also, some very popular movies are not so highly-rated. Further research is needed on what other variables affect the outcomes. The scatter plot is interactive showing some key metrics, as well as poster, when you hover over. 
             </p>
            
            
@@ -432,7 +430,7 @@
   
     <script>
 
-        let figure_1_spec = "Project_Chart1.json"
+        let figure_1_spec = "project_bar_1.json"
         let figure_2_spec = "project_scatter_2.json"
         let figure_3_spec = "project_piechart_3.json"
         let figure_4_spec = "project_location_4.json"
