@@ -58,7 +58,7 @@
     "anchor": "start",
     "frame": "group",
     "subtitle": [
-      "Popularity and average rating of the top 5000 films on TMDB",
+      "Popularity and average rating of the top 1000 films on TMDB",
       "Source: TMDB",
       ""
     ]
